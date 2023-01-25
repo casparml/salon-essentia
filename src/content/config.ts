@@ -18,7 +18,7 @@ import { z, defineCollection } from 'astro:content';
 // ervaringen
 const ervaringenCollection = defineCollection({
     schema: z.object({
-        index: z.string(),
+        index: z.number(),
         name: z.string(),
         title: z.string(),
         color: z.string().optional(),
@@ -50,6 +50,6 @@ const productenCollection = defineCollection({
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'ervaringen': ervaringenCollection,
-//   'massages': massagesCollection,
+  'massages': massagesCollection,
   'producten': productenCollection,
 };
