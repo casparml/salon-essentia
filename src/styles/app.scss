@@ -13,13 +13,6 @@ $link: #693abb;
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
-@font-face{
-    font-family:"segoe-print-regular";
-    src:url("https://www.dafontfree.net/data/46/s/61686/segoepr.ttf") format("woff"),
-    url("https://www.dafontfree.net/data/46/s/61686/segoepr.ttf") format("opentype"),
-    url("https://www.dafontfree.net/data/46/s/61686/segoepr.ttf") format("truetype");
-}
-
 body {
     font-size: 20px;
     font-family: 'Segoe Pro';
