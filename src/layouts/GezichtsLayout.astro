@@ -1,0 +1,132 @@
+---
+	import BaseLayout from './BaseLayout.astro';
+	import { getContrastColor } from "@lib/helpers";
+
+	import { Image } from '@astrojs/image/components';
+
+	const { frontmatter } = Astro.props
+---
+
+<BaseLayout {frontmatter}>
+	<div class="columns">
+		<main class="column is-half-tablet-only is-two-thirds">
+			<div class="content">
+				<slot />
+			</div>
+
+			<div class="columns">
+				<div class="column is-half-tablet-only">
+					<div class="box p-0 is-hidden-flow">
+						<figure class="image">
+							<Image loading="lazy" decoding="async" alt="Foto 3629" src="/images/3629-portrait.jpg" aspectRatio={4/3}  width="100%"/>
+						</figure>
+					</div>
+				</div>
+				<div class="column is-half-tablet-only">
+					<div class="box p-0 is-hidden-flow">
+						<div class="image is-square" style="overflow: hidden;">
+							<Image loading="lazy" decoding="async" alt="(foto 3540)" src="/images/3540-square.jpg" aspectRatio={4/3}  width="100%"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<aside class="column is-half-tablet-only is-one-third">
+			<div class="notification box is-warning"><b>Let op! Salon Essentia heeft nieuwe prijzen vanaf 1 januari 2023.</b><br />Onder voorbehoud van fouten en wijzigingen.</div>
+			<p class="title is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>Gezichtsbehandelingen</p>
+			<div class="box p-0">
+				<table class="table is-borderless is-fullwidth has-background-{getLightColor(frontmatter?.color)}">
+					<thead class="has-background-{getContrastColor(frontmatter?.color)}">
+						<tr>
+							<th>Behandeling</th>
+							<th>Duur</th>
+							<th>Prijzen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Vrijheid</td>
+							<td>60 minuten</td>
+							<td>€ 60</td>
+						</tr>
+						<tr>
+							<td>Verrukking</td>
+							<td>90 minuten</td>
+							<td>€ 85</td>
+						</tr>
+						<tr>
+							<td>Overvloed</td>
+							<td>120 minuten</td>
+							<td>€ 110</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="title is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>Verven</p>
+			<div class="box p-0">
+				<table class="table is-borderless is-fullwidth has-background-{getLightColor(frontmatter?.color)}">
+					<thead class="has-background-{getContrastColor(frontmatter?.color)}">
+						<tr>
+							<th>Verven</th>
+							<th>Prijzen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Wimpers</td>
+							<td>€ 12</td>
+						</tr>
+						<tr>
+							<td>Wenkbrauwen</td>
+							<td>€ 12</td>
+						</tr>
+						<tr>
+							<td>Wimpers en wenkbrauwen</td>
+							<td>€ 22</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="title is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>Extra's</p>
+			<div class="box p-0">
+				<table class="table is-fullwidth is-borderless has-background-{getLightColor(frontmatter?.color)}">
+					<thead class="has-background-{getContrastColor(frontmatter?.color)}">
+						<tr>
+							<th>Epileren/harsen</th>
+							<th>Prijzen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Bijwerken wenkbrauwen</td>
+							<td>€ 12</td>
+						</tr>
+						<tr>
+							<td>Modelleren wenkbrauwen</td>
+							<td>€ 15</td>
+						</tr>
+						<tr>
+							<td>Harsen bovenlip</td>
+							<td>€ 12</td>
+						</tr>
+						<tr>
+							<td>Harsen kin</td>
+							<td>€ 15</td>
+						</tr>
+						<tr>
+							<td>Harsen Compleet<br />bovenlip, kin, kaak, wangen</td>
+							<td>€ 40</td>
+						</tr>
+						<tr>
+							<td>Harsen Compleet<br /> + Wenkbrauwen</td>
+							<td>€ 50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</aside>
+	</div>
+</BaseLayout>

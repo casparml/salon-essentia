@@ -1,0 +1,47 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Ervaringen {
+  title: string;
+  name: string;
+  color: string;
+  date: Date;
+  index: number;
+}
+
+interface Frontmatter {
+  title: string;
+  subtitle: string;
+  color: string;
+  bold: boolean;
+  image: string;
+  imageAlt: string;
+  date: Date;
+  index: number;
+  description?: string;
+}
+
+const frontmatter:Frontmatter = Astro.props.frontmatter
+
+const ervaringen = await Astro.glob<Ervaringen>('../content/ervaringen/*.md');
+---
+
+<BaseLayout {frontmatter} >
+	<main class="columns is-multiline content">
+			{(ervaringen).sort((obj1, obj2) => {
+                return obj1.frontmatter.index < obj2.frontmatter.index
+            }).map((ervaring) => (
+		<div class="column is-half">
+			{ervaring.frontmatter.title && (
+				<h4 class="title" style="opacity: 0.5;">"{ervaring.frontmatter.title}"</h4>
+			)}
+			<figure class="m-0 has-text-left">
+				<blockquote class={"box notification " + ervaring.frontmatter.color + '-light'}>
+					<ervaring.default />
+				</blockquote>
+				<figcaption>~ {ervaring.frontmatter.name}</figcaption>
+			</figure>
+		</div>
+		))}
+	</main>
+</BaseLayout>

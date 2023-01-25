@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/favicon.png" />
+	<meta name="viewport" content="width=device-width" />
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, shrink-to-fit=no">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+	<!-- <meta name="Description" content="{{ bloginfo('description') }}"> -->
+	<meta name="author" content="Stichting ArtKids Foundation">
+	<!-- Viewport (iPhone 5 friendly) -->
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+	<!-- Title -->
+	<title>CMS: Schoonheids Salon Essentia</title>
+	<meta name="apple-mobile-web-app-title" content="Essentia">
+
+	<meta name="application-name" content="Essentia">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="MobileOptimized" content="width">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css"
+		integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/svg-with-js.min.css"
+		integrity="sha512-j+8sk90CyNqD7zkw9+AwhRuZdEJRLFBUg10GkELVu+EJqpBv4u60cshAYNOidHRgyaKNKhz+7xgwodircCS01g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="/fonts/stylesheet.css" rel="stylesheet">
+		<link href="https://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
+		<meta name="description" content="Schoonheids salon Essentia" />
+	<!-- Note the "type" and "rel" attribute values, which are required. -->
+	<!-- <link href="https://lastmessengers.artkidsfoundation.org/admin/config.yml" type="text/yaml" rel="cms-config-url"> -->
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body class="dark">
+	<!-- Include the script that builds the page and powers Netlify CMS -->
+	<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+	<script>
+		function getTextColor(color) {
+			let darkColor = getDarkColor(color)
+			return darkColor.replace('is-', 'has-text-')
+		}
+
+		function getHighlightTextColor(color) {
+			let textColor = (
+				color === 'is-light' ||
+				color === 'is-white') ? 'is-dark' : //if its light return dark
+					(color === 'is-warning') ? getDarkColor(color) : // if its warning return dark contrast
+					getLightColor(color)
+
+			return textColor.replace('is-', 'has-text-')
+		}
+
+		function getLightBackgroundColor(color) {
+			let lightColor = getLightColor(color)
+			// console.log('HIERO:', color, lightColor.replace('is-', 'has-background-'))
+			return lightColor.replace('is-', 'has-background-')
+		}
+
+		function getBackgroundColor(color) {
+			// console.log('HIERO:', color, lightColor.replace('is-', 'has-background-'))
+			return color.replace('is-', 'has-background-')
+		}
+
+
+		function getLightColor(color) {
+			return (!color ? 'is-light' :
+				color === 'is-light') ? 'is-light' :
+					(color === 'is-white') ? 'is-white' :
+						(color === 'is-dark') ? 'is-light' :
+							( color === "is-black") ? 'is-white' :
+								color + '-light' // else return light version
+		}
+
+		function getDarkColor(color) {
+			return (
+				color === 'is-light') ? 'is-dark' :
+					(color === 'is-white') ? 'is-black' :
+						(color === 'is-dark') ? 'is-dark' :
+							( color === "is-black") ? 'is-black' :
+								color + '-dark' // else return dark version
+		}
+
+		CMS.registerPreviewStyle("/admin/mobile.css");
+		CMS.registerPreviewStyle("/admin/adminstyles.css");
+		var PagesPreview = createClass({
+			render: function() {
+			var entry = this.props.entry;
+			var image = entry.getIn(['data', 'image']);
+			var bg = this.props.getAsset(image);
+			var color = entry.getIn(['data', 'color'])
+			var bold = entry.getIn(['data', 'bold'])
+			var size = entry.getIn(['data', 'size'])
+			let herostyles = ' '
+				+ bold ? 'is-bold ': ' '
+				+ color ? color: 'is-primary '
+				+ size ? size : 'is-fullheight '
+				+ bg ? 'has-background ': 'has-background '
+
+			return h('div', {className: getLightBackgroundColor(color)},
+				h('header', {className: 'hero is-fullheight-with-navbar has-background ' + herostyles },
+					h('img', {className: 'hero-image', src: bg.toString()}),
+					h('div', {className: 'hero-head'},
+						h('div', {className: 'navbar is-spaced ' + color},
+
+							h('div', {className: 'navbar-brand ml-3 in:fade ' + color},
+								h('a', {className: 'navbar-item is-hidden-mobile is-active ' + getLightBackgroundColor(color) + ' ' + getTextColor(color)},
+									h('h1', {className: 'title is-size-5 branding-font pl-3 ' + getTextColor(color)}, 'Essentia'),
+								),
+							),
+							h('div', {id: "navbarMenuHeroC", className: 'navbar-menu'},
+								h('div', {className: "navbar-start is-transparent in:fly-y:-200duration:500 out:fade " + getLightBackgroundColor(color) + ' ' + getTextColor(color)},
+									h('a', {className: "is-size-5 navbar-item mx-1 py-5 has-text-dark " + getHighlightTextColor(color) },
+										h('span', {className: 'icon-text is-capitalized'},
+											h('span', {className: 'icon-text is-capitalized'}, entry.getIn(['data', 'title']) ),
+										),
+									),
+								),
+							),
+						),
+					),
+
+					h('div', {className: 'hero-body'},
+						h('div', {className: 'container'},
+							h('div', {className: 'box notification is-transparent content ' + getLightBackgroundColor(color)},
+								h('h1', {className: 'title is-size-4 ' + getTextColor(color)}, entry.getIn(['data', 'title'])),
+								h('h2', {className: 'subtitle is-size-5 ' + getTextColor(color)}, entry.getIn(['data', 'subtitle'])),
+								h('div', {className: 'content ' + getTextColor(color)},
+									h('p', {}, entry.getIn(['data', 'description']) ),
+								),
+							),
+						),
+					),
+				),
+
+				h('main', {className: 'section ' + getLightBackgroundColor(color)},
+					h('div', {className: "container raised"}, this.props.widgetFor('body'))
+				),
+			);
+			}
+		});
+		CMS.registerPreviewTemplate("pages", PagesPreview);
+
+		var ProductPreview = createClass({
+			render: function() {
+			var entry = this.props.entry;
+			var image = entry.getIn(['data', 'image']);
+			var bg = this.props.getAsset(image);
+
+			return h('div', {className:  getLightBackgroundColor('is-info')},
+				h('h3', {className: 'title has-text-centered is-size-4 pt-4 ' + getTextColor('is-info')}, 'Product voorbeeld'),
+				h('section', {className: 'section'},
+					h('div', {className: 'container'},
+						h('div', {className: 'columns is-vcentered is-multiline'},
+							h('div', {className: 'column is-6-tablet is-3-desktop'},
+								h('h3', {className: 'is-size-3-mobile is-size-4-desktop title'}, entry.getIn(['data', 'name'])),
+								h('h4', {className: 'is-size-3-mobile is-size-4-desktop subtitle'}, entry.getIn(['data', 'brand'])),
+								h('p', {className: "content"}, this.props.widgetFor('body'))
+							),
+							h('div', {className: 'column is-6-tablet is-5-desktop has-text-centered'},
+								h('img', {className: 'p-6', src: bg.toString(), alt: 'Product Foto'}),
+							),
+							h('div', {className: 'column is-12-tablet is-4-desktop'},
+								h('div', {className: 'is-size-4 mb-4'}, '€' + entry.getIn(['data', 'price'])),
+								h('p', {className: 'mb-4'}, entry.getIn(['data', 'description'])),
+								h('div', {className: 'my-5'}, 'Inhoud: ' + entry.getIn(['data', 'amount']) + ' X '  + entry.getIn(['data', 'content'])  + entry.getIn(['data', 'contentUnit'])),
+							),
+						),
+					),
+				),
+				h('section', {className: 'section'},
+					h('div', {className: 'container'},
+						h('div', {className: 'columns mt-5 is-8 is-variable is-centered'},
+							h('div', {className: 'column is-5-tablet is-4-desktop'},
+								h('div', {className: 'card'},
+									h('div', {className: 'card-image has-text-centered px-6'},
+										h('img', {alt: 'product', src: bg.toString()}),
+									),
+									h('div', {className: 'card-content'},
+										h('p', {}, '€' + entry.getIn(['data', 'price'])),
+										h('h3', {className: 'title is-size-5'}, entry.getIn(['data', 'name'])),
+										h('h5', {className: 'subtitle is-size-5'}, entry.getIn(['data', 'brand'])),
+									),
+									h('footer', {className: 'card-footer'},
+										h('p', {className: 'card-footer-item'},
+											h('a', {className: 'has-text-grey'}, 'Bekijk Product >'),
+										),
+									),
+								),
+							),
+						),
+					),
+				),
+			);
+			}
+		});
+		CMS.registerPreviewTemplate("producten", ProductPreview);
+
+		var ErvaringenPreview = createClass({
+			render: function() {
+			var entry = this.props.entry;
+
+			return h('div', {className: 'has-text-left ' + getLightBackgroundColor('is-info')},
+					h('h3', {className: 'title has-text-centered is-size-4 pt-4 ' + getTextColor('is-info')}, 'Ervaring voorbeeld'),
+				h('main', {className: 'columns is-multiline content is-centered' },
+					h('div', {className: 'column is-half'},
+						h('h4', {className: 'title is-size-5'}, entry.getIn(['data', 'excerpt'])),
+						h('figure', {className: 'm-0 has-text-left'},
+							h('blockquote', {className: 'box notification ' + entry.getIn(['data', 'color']) + '-light'},this.props.widgetFor('body')),
+							h('figcaption', {}, '~ ' + entry.getIn(['data', 'name'])),
+						),
+					),
+				),
+			);
+			}
+		});
+		CMS.registerPreviewTemplate("ervaringen", ErvaringenPreview);
+
+
+	</script>
+
+</body>
+
+</html>

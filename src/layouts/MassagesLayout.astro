@@ -1,0 +1,293 @@
+---
+import BaseLayout from './BaseLayout.astro';
+    import { getContrastColor } from "../lib/helpers"
+    let image3391 = '/images/3391-landscape.jpg'
+    let image3392 = '/images/3392-landscape.jpg'
+    let image3410 = '/images/3384-landscape.jpg'
+    let image3454 = '/images/3454-portrait.jpg'
+    let image3466 = '/images/3466-portrait.jpg'
+    let image3470 = '/images/3470-portrait.jpg'
+    let image3505 = '/images/3505-portrait.jpg'
+    let image3518 = '/images/3518-portrait.jpg'
+    let image3547 = '/images/3547-portrait.jpg'
+
+	const { frontmatter } = Astro.props;
+---
+
+<BaseLayout {frontmatter}>
+	<div class="container">
+		<slot />
+        <div class="notification box is-warning"><b>Let op! Salon Essentia heeft nieuwe prijzen vanaf 1 januari 2023.</b><br />Onder voorbehoud van fouten en wijzigingen.</div>
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <figure class="image">
+                            <img loading="lazy" decoding="async" alt="Foto 3481" src={image3466} />
+                        </figure>
+                    </div>
+                </div>
+                <div>
+                    <div class="column">
+                        <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Bashya Chou Massage
+                        </p>
+                        <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Los:<br />
+                            30 minuten €30<br />
+                            Kuur:<br />
+                            5 X 30 minuten €135<br />
+                        </p>
+                        <p>
+                            Een massage ritueel van ca. 30 minuten, waarin hoofdhuid/haar en oren wordt behandeld. Een moment van totale ontspanning, het maakt je hoofd leeg, trekt spanningen weg (kan het stresshormoon cortisol laten dalen) en brengt je naar je eigen stiltepunt.
+                            Zit je in een periode van veel stress dan is deze behandeling 1x in de week, voor een aantal weken aan te raden. Ook bij kinderen heeft deze massage een positief effect.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="Ontspanningsmassage foto" src={image3470}/>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Ontspanningsmassage
+                    </p>
+                    <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Los:<br />
+                        30 minuten €30<br />
+                        60 minuten €60<br />
+                    </p>
+                    <p>
+                        Een zachte rustgevende massage om te ontspannen en tot rust kunt komen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="BindWeefsel Massage" src={image3505}/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="column">
+                        <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Bindweefsel Massage Gelaat/Lichaam
+                        </p>
+                        <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Los:<br />
+                            30 minuten € 30<br />
+                            60 minuten € 60<br />
+                            <br />
+                            Kuur:<br />
+                            5 X 30 minuten € 135<br />
+                            5 X 60 minuten € 270<br />
+                        </p>
+                        <p>
+                            Een intensieve massage toepasbaar op gezicht en lichaam, die de doorbloeding activeert en het onderhuids bindweefsel verbetert. Door deze techniek verstevigt de huid zich op een natuurlijke wijze. Na enkele behandeling zal de huid zachter, steviger en veerkrachtiger aanvoelen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box p-5 is-notification">
+
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="(foto 3410)" src={image3410}/>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Lymfedrainage Gelaat (dr. Vodder methode)
+                    </p>
+                    <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Los:<br />
+                        30 minuten € 30<br />
+                        60 minuten € 60<br />
+                        <br />
+                        Kuur:<br />
+                        5 X 30 minuten € 135<br />
+                        5 X 60 minuten € 270<br />
+                    </p>
+                    <p>
+                        Een zachte massagetechniek van pompende, cirkelvormige bewegingen met een lichte druk.
+                        Naast een drainerende werking op het lymfestelsel, heeft het een ontspannende werking, het verlaagt stress, versterkt je afweersysteem en heeft een positieve werking op de vochthuishouding en het hormoonstelsel.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="Aroma Massage" src={image3547}/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="column">
+                        <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Aroma Massage Rug
+                        </p>
+                        <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Los:<br />
+                            ca. 45 minuten € 65<br />
+                        </p>
+                        <p>
+                            Een weldadige massage met 8 verschillende hoogwaardige etherische oliën. Iedere olie heeft hierin zijn eigen werking op lichaam en geest. Bij deze massage wordt voornamelijk op de rug gewerkt, maar ook hoofdhuid, oren en voeten worden meegenomen.
+                            Houd er rekening mee dat de haren door de massage vet worden.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="(foto 3410)" src={image3392}/>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Hot Stone Massage
+                    </p>
+                    <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Los:<br />
+                        30 minuten € 30<br />
+                        60 minuten € 60<br />
+                    </p>
+                    <p>
+                        Massage met warme stenen en olie die je spieren en lichaam ontspannen. De warmte van de stenen dringt diep door in de spieren en blijft nog minimaal een dag doorwerken.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="(foto 3410)" src={image3518}/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="column">
+                        <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Scrub Massage Rug
+                        </p>
+                        <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Los:<br />
+                            30 minuten €30<br />
+                        </p>
+                        <p>
+                            Masserend word je rug gescrubd met Dode Zee Scrub om dode huidcellen te verwijderen, de doorbloeding te stimuleren, de huid te reinigen-, verjongen en zacht te maken. Dode Zee Zout bevat 40 verschillende mineralen, waarvan een hoog gehalte aan Kalium en Magnesium. Dode Zee Zout heeft een kalmerend en ontspannend effect, werkt mee aan herstel van de huid en verlicht klachten bij huidaandoeningen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="(foto 3410)" src={image3410}/>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Hand/Voet Massage
+                    </p>
+                    <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Los:<br />
+                        20 minuten €20<br />
+                    </p>
+                    <p>
+                        Een ontspannen massage voor je handen en/of voeten die dagelijks heel wat werk verzetten en je overal naartoe brengen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="Reiki Massage" src={image3454}/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="column">
+                        <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Reiki
+                        </p>
+                        <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                            Los:<br />
+                            30 minuten €30<br />
+                            60 minuten €60<br />
+                        </p>
+                        <p>
+                            Bij een reiki behandelingen laat ik door middel van handoplegging de energie stromen en wordt er gegeven wat jij op dat moment nodig hebt. Hiermee worden problemen niet opgelost maar kan het je begeleiden naar balans of heling en geeft het een diepe ontspanning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-5 is-notification">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div class="box p-0 is-hidden-flow">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" alt="(foto 3410)" src={image3391}/>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Drummassage
+                    </p>
+                    <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
+                        Los:<br />
+                        30-45 minuten €45<br />
+                    </p>
+                    <p>
+                        De drum, een krachtig oerinstrument, nodigt je uit om haar ritme te volgen. Dit ritme zal je helpen om je hoofd leeg te maken en in je lichaam te zakken, dus terug in je basis, terug naar je staat van zijn. Het brengt je in een ontspannen toestand van waken en slapen, waardoor je onderbewuste open kan gaan en eventuele blokkades toegankelijker worden en los getrild kunnen worden.
+                        Vanwege de intensiteit van het geluid, is deze “massage” alleen op locatie of buiten in de natuur mogelijk. In overleg zullen we hier afspraken over maken en in de tijdsduur zit een voor- en nabespreking.
+                        Bij slecht weer kan de buitenafspraak niet doorgaan.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</div>
+</BaseLayout>

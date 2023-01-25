@@ -1,0 +1,22 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+import { Image } from '@astrojs/image/components';
+const { frontmatter } = Astro.props
+
+---
+
+<BaseLayout {frontmatter}>
+	<div class="columns">
+		<div class="column is-one-third is-hidden-mobile">
+			<figure class="image">
+				<Image width="640" aspectRatio={9/16} class="is-rounded" alt="Hélène van der Linden, een gediplomeerd schoonheidsspecialiste" src="/images/3650-portrait.jpg" />
+			</figure>
+		</div>
+		<div class="column is-two-thirds">
+			<div class="content">
+				<slot />
+			</div>
+		</div>
+	</div>
+</BaseLayout>

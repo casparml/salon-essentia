@@ -1,0 +1,138 @@
+---
+    import { Image } from '@astrojs/image/components';
+    import { Icon } from 'astro-icon'
+
+    // replaced dynamically
+    const buildDate = __DATE__;
+---
+<section class="section is-hidden-desktop">
+    <div class="container">
+        <div class="notification box is-warning content mx-5 py-5">
+        <h4 class="title is-4 is-italic">We wijzen u er op dat:</h4>
+            <ul>
+                <li>Alle behandelingen gaan op afspraak.</li>
+                <li>De gemaakte afspraak kan <b>minimaal 24 uur voor aanvang</b> kosteloos worden verzet.</li>
+                <li>Niet of te laat geannuleerde afspraken worden volledig doorberekend.</li>
+                <li>Betalingen kunnen contant gedaan worden of per omgaande overgemaakt worden.</li>
+                <li>Er is geen mogelijkheid om te pinnen.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="hero is-dark is-bottom">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <secion class="column is-hidden-touch">
+                        <h4 class="title is-4 is-italic">We wijzen u er op dat:</h4>
+                        <div class="notification box is-warning content">
+                            <ul>
+                                <li>Alle behandelingen gaan op afspraak.</li>
+                                <li>De gemaakte afspraak kan <b>minimaal 24 uur voor aanvang</b> kosteloos worden verzet.</li>
+                                <li>Niet of te laat geannuleerde afspraken worden volledig doorberekend.</li>
+                                <li>Betalingen kunnen contant gedaan worden of per omgaande overgemaakt worden.</li>
+                                <li>Er is geen mogelijkheid om te pinnen.</li>
+                            </ul>
+                        </div>
+                    </secion>
+                    <section class="column is-narrow">
+                        <h4 class="title is-4 is-italic">Heeft u vragen?</h4>
+                            <div class="content">
+                                <p>
+                                    <b>Adres</b><br />
+                                    Schoonheidssalon Essentia<br />
+                                    Kon. Wilhelminalaan 20A<br />
+                                    4205 EW Gorinchem<br />
+                                </p>
+                                <p>
+                                    <b>Telefoon</b><br />
+                                    <a href="tel:06 400 266 48">06 400 266 48</a>
+                                </p>
+                            </div>
+                            <p>
+                                <a class="button is-medium is-whatsapp" title="Neem Contact met ons op!" href="https://api.whatsapp.com/send?phone=31640026648&text=Dag%20Salon%20Essentia%2C%20ik%20heb%20een%20vraag..." target="_blank">
+                                    <span class="icon-text">
+                                        <span class="icon">
+
+			                                <Icon pack="fa" name="whatsapp" class="fa-lg"/>
+                                        </span>
+                                        <span>Contact Salon Essentia!</span>
+                                    </span>
+                                </a>
+                            </p>
+                    </section>
+                    <section class="column">
+                        <h4 class="title is-4 is-italic">Waar vindt je Salon Essentia?</h4>
+                        <figure class="image map is-16x9">
+                            <iframe title="Adres op Google Maps" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=%20Kon.%20Wilhelminalaan%2020A%2C%204205%20EW%20Gorinchem&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" aria-label=" Kon. Wilhelminalaan 20A, 4205 EW Gorinchem">
+                            </iframe>
+                        </figure>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer has-background-black">
+        <div class="container has-text-grey">
+            <div class="content">
+                <div class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading has-text-primary-dark">Telefoon</p>
+                            <p>06 400 266 48</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading has-text-primary-dark">IBAN nr.</p>
+                            <p>NL19 ABNA 0465 8797 72 </p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading has-text-primary-dark">Kvk nr.</p>
+                            <p>52105261</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <p>
+                            <span>Gebouwd om: {buildDate} Copyright © 2021-2023 | All rights reserved to Salon Essentia</span>
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p class="logo level-right">
+                            <a class="brand has-text-shadow has-text-grey" href="/"
+                            title="visit ArtKids Foundation Website?">
+                            Powered by
+                            <Image loading="lazy" decoding="async" src="/images/artkids_logo.png" alt="Stichting ArtKids Foundation: Funding Happiness" width="24px" height="24px" />
+                            <span class="artkids has-text-weight-bold is-italic has-text-danger">ArtKids</span><span
+                            class="foundation has-text-weight-bold is-italic" style="color: yellow;">Foundation.org</span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style lang="scss">
+.image.map {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+</style>

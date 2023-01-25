@@ -1,0 +1,149 @@
+---
+import '../styles/app.scss'
+// import { pwaInfo } from 'virtual:pwa-info';
+
+import { Icon } from 'astro-icon'
+
+import { AstroSeo } from '@astrolib/seo';
+import { Image } from '@astrojs/image/components';
+
+import { getLightBackgroundColor, getTextColor} from '@lib/helpers';
+
+import Footer from '@components/Footer.astro'
+import Nav from '@components/Nav.astro';
+
+export let frontmatter
+const { index, title, subtitle, image, description, bold, color, size, carousel } = frontmatter || Astro.props.frontmatter || Astro.props;
+
+function herostyles(){
+	return bold ? 'is-bold ': ''
+	+ image ? ' has-background ' : carousel ? 'is-carousel ' : 'has-background'
+
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<meta name="generator" content={Astro.generator} />
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<link href="/fonts/stylesheet.css" rel="stylesheet">
+	<link href="https://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
+	<link rel="icon" href="/favicon.png" />
+	<!-- <script src="/src/pwa.ts"></script> -->
+    <!-- { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> } -->
+
+	<AstroSeo
+	title={'Salon Essentia - ' + title}
+	description={description}
+	canonical={Astro.canonicalURL}
+	openGraph={{
+		title: 'Salon Essentia - ' + title,
+		description: description,
+		url: Astro.request.url.toString(),
+		site_name: "Salon Essentia",
+		locale: "nl_NL",
+		images: [
+			{
+				url: 'https://salonessentia.nl' + image
+			}
+		]
+	}}
+	twitter={{
+		cardType: "summary_large_image",
+		site: Astro.request.url.toString(),
+	}}
+
+	/>
+</head>
+<body>
+	<header class={"hero is-fullheight-with-navbar has-background " + herostyles() + ' ' + size + ' ' + color} >
+		<!-- Hero Image: will provide an image covering the whole Hero -->
+		<Image loading="lazy" decoding="async" aspectRatio={16/9} width="1920" class="hero-image" src={image} alt={subtitle} title={title} />
+		<!-- Hero head: will stick at the top -->
+		<div class="hero-head">
+			<Nav color={color} />
+		</div>
+		<!-- Hero content: will be in the middle -->
+		<div class="hero-body">
+			<div class="container">
+				<div class={"box notification is-transparent content " + getLightBackgroundColor(color)} style="max-width: 440px;">
+					<h1 class={"title is-size-4 " + getTextColor(color)}>{title}</h1>
+					<h2 class={"subtitle is-size-5 " + getTextColor(color)}>{subtitle}</h2>
+					<div class={"content " + getTextColor(color)}>
+						<p>{description}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class={"section " + getLightBackgroundColor(color)}>
+		<div class="container raised">
+			<slot />
+		</div>
+	</main>
+	<Footer />
+
+	<a class="button is-rounded is-whatsapp is-floating" href="https://api.whatsapp.com/send?phone=31640026648&text=Dag%20Salon%20Essentia%2C%20ik%20heb%20een%20vraag..." target="_blank">
+		<span class="icon is-large">
+			<Icon pack="fa" name="whatsapp" />
+		</span>
+	</a>
+
+</body>
+</html>
+
+<style lang="scss">
+	@media screen and (max-width: 768px) {
+		.hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
+			align-items: end;
+			padding: .75rem 0.5rem;
+		}
+
+		.hero .hero-image {
+			position: initial !important;
+		}
+
+		.hero-body {
+			flex-grow: 0;
+
+			.box {
+				max-width: unset !important;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) and (orientation: portrait) {
+		.hero-image {
+			height: 60vh !important;
+		}
+	}
+
+	.is-floating{
+		position:fixed;
+		bottom:2rem;
+		left:2rem;
+		z-index:10;
+
+		width: 4rem;
+		height: 4rem;
+		overflow:hidden;
+		border-radius: 2rem;
+	}
+
+	.is-floating .icon {
+		margin-left: -0.75rem;
+		margin-right: -0.75rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		.is-floating {
+			bottom: 1rem;
+			left: 1rem;
+		}
+	}
+</style>

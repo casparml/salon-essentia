@@ -1,0 +1,169 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import { Image } from '@astrojs/image/components';
+
+const { frontmatter } = Astro.props
+
+interface Producten {
+	date: Date;
+	index: number;
+	title: string;
+	brand: string;
+	content: string;
+	contentUnit: string;
+	price: string;
+	image: string;
+}
+
+interface Frontmatter {
+	title: string;
+	subtitle: string;
+	color: string;
+	bold: boolean;
+	image: string;
+	imageAlt: string;
+	date: Date;
+	index: number;
+	description?: string;
+}
+
+/**
+* @description
+* Takes an Array<V>, and a grouping function,
+* and returns a Map of the array grouped by the grouping function.
+*
+* @param list An array of type V.
+* @param keyGetter A Function that takes the the Array type V as an input, and returns a value of type K.
+*                  K is generally intended to be a property key of V.
+*
+* @returns Map of the array grouped by the grouping function.
+*/
+// export function groupBy<K, V>(list: Array<V>, keyGetter: (input: V) => K): Map<K, Array<V>> {
+//    const map = new Map<K, Array<V>>();
+function groupByType(list) {
+	const map = []
+	// Each Item
+	list.forEach((item) => {
+		const key = item.data.type;
+		// check if group object exists that has the same key
+		const groupIndex = map.findIndex(group => String(group.key) == String(key))
+		// If the collection doesnt exist
+		if (groupIndex >= 0) {
+			map[groupIndex].items.push(item);
+		} else {
+			map.push({key: String(key), items: new Array(item) });
+			const groupIndex = map.findIndex(group => String(group.key) == String(key)) || undefined
+		}
+	});
+
+	return map;
+}
+
+// const producten = await Astro.glob<Producten>('../content/producten/*.md');
+// const sortedProducten = groupBy(producten, product => product.frontmatter.type)
+const allProducts = await getCollection('producten');
+
+---
+
+<BaseLayout {frontmatter}>
+	<div class="columns">
+		<main class="column is-half">
+			<div class="content">
+				<slot />
+			</div>
+			<div class="box p-0 is-hidden-flow">
+				<figure class="image">
+					<Image width="640" aspectRatio={9/16} loading="lazy" decoding="async" alt="Foto 3481" src="/images/3481-portrait.jpg" />
+				</figure>
+			</div>
+		</main>
+		<aside class="column is-half">
+			<div class="notification box is-warning"><b>Let op! Salon Essentia heeft nieuwe prijzen vanaf 1 januari 2023.</b><br />Onder voorbehoud van fouten en wijzigingen.</div>
+			<p class="title is-size-5 has-text-primary">Product prijzen</p>
+			{groupByType(allProducts).map(group => (
+			<div class="box p-0">
+				<table class="table is-borderless is-fullwidth has-background-primary-light">
+					<thead class="has-background-primary">
+						<tr>
+							<th>
+								<label for={group.key.replace(' ', '-')}>
+									{group.key}
+								</label>
+							</th>
+							<th>Inhoud</th>
+							<th>Prijzen</th>
+						</tr>
+					</thead>
+					<input class="toggle" type="radio" id={group.key.replace(' ', '-')} name="producten" >
+					<tbody class="colapsable">
+						{group.items.sort((product1, product2) => product1.data.index - product2.data.index).map(product => (
+						<tr>
+							<td> {product.data.name}</td><td>{product.data.content}{product.data.contentUnit}</td><td>{Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(product.data.price)}</td>
+						</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			))}
+		</aside>
+	</div>
+</BaseLayout>
+
+<style lang="scss">
+	input[type='radio'] {
+		display: none;
+	}
+
+	.table {
+		th label {
+			display: block;
+			cursor: pointer;
+
+			&:hover {
+				color: hsl(162, 84%, 26%);
+			}
+
+			&::before {
+				content: ' ';
+				display: inline-block;
+
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent;
+				border-left: 5px solid currentColor;
+
+				vertical-align: middle;
+				margin-right: .7rem;
+				transform: translateY(-2px);
+
+				transition: transform .2s ease-out;
+			}
+
+		}
+
+		.toggle + tbody {
+			overflow: hidden;
+
+			tr {
+				transition: all .25s ease-in-out;
+				font-size:0;
+				color: transparent;
+
+				td {
+					border-bottom-width: 0;
+				}
+			}
+		}
+
+		.toggle:checked + tbody {
+			tr {
+				font-size: initial;
+				color: initial;
+
+				td {
+					border-bottom-width: initial !important;
+				}
+			}
+		}
+	}
+</style>
