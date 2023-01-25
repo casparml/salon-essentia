@@ -33,7 +33,7 @@ const ervaringen = await Astro.glob<Ervaringen>('../content/ervaringen/*.md');
             }).map((ervaring) => (
 		<div class="column is-half">
 			{ervaring.frontmatter.title && (
-				<h3 class="title" style="opacity: 0.5;">"{ervaring.frontmatter.title}"</h3>
+				<h4 class="title" style="opacity: 0.5;">"{ervaring.frontmatter.title}"</h4>
 			)}
 			<figure class="m-0 has-text-left">
 				<blockquote class={"box notification " + ervaring.frontmatter.color + '-light'}>

@@ -23,7 +23,7 @@ function herostyles(){
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
@@ -45,6 +45,7 @@ function herostyles(){
 		description: description,
 		url: Astro.request.url.toString(),
 		site_name: "Salon Essentia",
+		type: "website",
 		locale: "nl_NL",
 		images: [
 			{
@@ -71,8 +72,8 @@ function herostyles(){
 		<div class="hero-body">
 			<div class="container">
 				<div class={"box notification is-transparent content " + getLightBackgroundColor(color)} style="max-width: 440px;">
-					<h1 class={"title is-size-4 " + getTextColor(color)}>{title}</h1>
-					<h2 class={"subtitle is-size-5 " + getTextColor(color)}>{subtitle}</h2>
+					<h2 class={"title is-size-4 " + getTextColor(color)}>{title}</h2>
+					<h3 class={"subtitle is-size-5 " + getTextColor(color)}>{subtitle}</h3>
 					<div class={"content " + getTextColor(color)}>
 						<p>{description}</p>
 					</div>
