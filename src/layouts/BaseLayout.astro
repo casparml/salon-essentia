@@ -1,6 +1,5 @@
 ---
 import '../styles/app.scss'
-// import { pwaInfo } from 'virtual:pwa-info';
 import { PageTransition } from 'astro-page-transition';
 
 import { Icon } from 'astro-icon'
@@ -37,18 +36,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	<meta name="theme-color" content="#ffffff">
 	<link href="/fonts/stylesheet.css" rel="stylesheet" rel="preload" as="style">
 	<link rel="icon" href="/favicon.png" />
-	<!-- <script src="/src/pwa.ts"></script> -->
-    <!-- { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> } -->
+	<script src="/src/pwa.ts"></script>
 
 	<AstroSeo
 	title={'Salon Essentia - ' + title}
 	description={description}
-	canonical={Astro.canonicalURL}
+	canonical={canonicalURL.toString()}
 	openGraph={{
 		title: 'Salon Essentia - ' + title,
 		description: description,
 		url: Astro.request.url.toString(),
-		canonical: canonicalURL,
 		site_name: "Salon Essentia",
 		type: "website",
 		locale: "nl_NL",
