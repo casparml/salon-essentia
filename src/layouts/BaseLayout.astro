@@ -40,7 +40,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	<link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
 	<link rel="preconnect" crossorigin="anonymous" href="https://fonts.cdnfonts.com">
 
-
 	<AstroSeo
 	title={'Salon Essentia - ' + title}
 	description={description}
@@ -58,14 +57,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			}
 		]
 	}}
-	twitter={{
-		cardType: "summary_large_image",
-		site: Astro.request.url.toString(),
-	}}
+
 
 	/>
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content={title}>
+	<meta property="twitter:description" content={description}>
+	<meta property="twitter:image" content={"https://salonessentia.nl" + image}>
+	<meta property="og:image" content={"https://salonessentia.nl" + image}>
 </head>
 <body>
+	<link itemprop="thumbnailUrl" href={"https://salonessentia.nl" + image}>
+	<span class="hidden" itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+		<link itemprop="url" href={"https://salonessentia.nl" + image}>
+	</span>
 	<PageTransition speed={500} color="hsl(44deg, 100%, 77%)" zIndex={99} />
 	<header class={"hero is-fullheight-with-navbar has-background " + herostyles() + ' ' + size + ' ' + color} >
 		<!-- Hero Image: will provide an image covering the whole Hero -->
