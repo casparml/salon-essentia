@@ -28,7 +28,34 @@ export default defineConfig({
     define: {
       __DATE__: `'${new Date().toISOString()}'`
     },
-    plugins: [VitePWA()]
+    plugins: [VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        globDirectory: 'dist',
+        globPatterns: [
+          '**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}',
+        ],
+        // Don't fallback on document based (e.g. `/some-page`) requests
+        // This removes an errant console.log message from showing up.
+        navigateFallback: null,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.cdnfonts\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'cdn-fonts-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+        ]
+      },
+    })]
   },
   site: 'http://localhost:3001',
   integrations: [image({
@@ -59,7 +86,26 @@ export default defineConfig({
   //     navigateFallback: '/404',
   //   },
   // }),
-  , purgecss(), webmanifest()]
-  // output: "server",
-  // adapter: netlify()
+  , purgecss(), webmanifest(
+    {
+      /**
+       * required
+       **/
+      name: 'Salon Essentia.nl',
+
+      /**
+       * optional
+       **/
+      icon: 'public/images/essentia-sun.png', // source for favicon & icons
+
+      short_name: 'Essentia',
+      description: 'Uw plek voor complete verzorging tot in de kern',
+      start_url: '/',
+      theme_color: '#3367D6',
+      background_color: '#3367D6',
+      display: 'standalone',
+    }
+  )],
+  output: "server",
+  adapter: netlify()
 });
