@@ -86,7 +86,7 @@ export default defineConfig({
   //     navigateFallback: '/404',
   //   },
   // }),
-  , purgecss(), webmanifest(
+  , webmanifest(
     {
       /**
        * required
