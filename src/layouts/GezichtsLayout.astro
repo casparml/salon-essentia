@@ -1,10 +1,13 @@
 ---
-	import BaseLayout from './BaseLayout.astro';
-	import { getContrastColor } from "@lib/helpers";
-
+	import { getCollection } from 'astro:content';
 	import { Image } from '@astrojs/image/components';
 
+	import { getBackgroundColor, getContrastColor, getLightColor, getLightBackgroundColor, groupByType } from "@lib/helpers";
+
+	import BaseLayout from './BaseLayout.astro';
+
 	const { frontmatter } = Astro.props
+	const allGezichtsbehandelingen = await getCollection('gezichtsbehandelingen');
 ---
 
 <BaseLayout {frontmatter}>
@@ -34,99 +37,37 @@
 
 		<aside class="column is-half-tablet-only is-one-third">
 			<div class="notification box is-warning"><b>Let op! Salon Essentia heeft nieuwe prijzen vanaf 1 januari 2023.</b><br />Onder voorbehoud van fouten en wijzigingen.</div>
-			<p class="title is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>Gezichtsbehandelingen</p>
+			{groupByType(allGezichtsbehandelingen).map( behandelingsGroup => (
+
+			<p class={"title is-size-5 has-text-" + getLightColor(frontmatter?.color)}>{behandelingsGroup.key}</p>
 			<div class="box p-0">
-				<table class="table is-borderless is-fullwidth has-background-{getLightColor(frontmatter?.color)}">
-					<thead class="has-background-{getContrastColor(frontmatter?.color)}">
+				<table class={"table is-borderless is-fullwidth " + getLightBackgroundColor(frontmatter?.color)}>
+					<thead class={getBackgroundColor(frontmatter?.color)}>
 						<tr>
-							<th>Behandeling</th>
+							<th>{behandelingsGroup.key}</th>
 							<th>Duur</th>
 							<th>Prijzen</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Vrijheid</td>
-							<td>60 minuten</td>
-							<td>€ 60</td>
-						</tr>
-						<tr>
-							<td>Verrukking</td>
-							<td>90 minuten</td>
-							<td>€ 85</td>
-						</tr>
-						<tr>
-							<td>Overvloed</td>
-							<td>120 minuten</td>
-							<td>€ 110</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+						{behandelingsGroup.items.sort((behandeling1, behandeling2) => behandeling1.data.index - behandeling2.data.index).map(behandeling => (
 
-			<p class="title is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>Verven</p>
-			<div class="box p-0">
-				<table class="table is-borderless is-fullwidth has-background-{getLightColor(frontmatter?.color)}">
-					<thead class="has-background-{getContrastColor(frontmatter?.color)}">
 						<tr>
-							<th>Verven</th>
-							<th>Prijzen</th>
+							<td>{behandeling.data.title}</td>
+							<td>
+							{behandeling.data.duration && (
+								<span>
+								{behandeling.data.duration}min.
+								</span>
+							)}
+							</td>
+							<td>{Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(behandeling.data.price)}</td>
 						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Wimpers</td>
-							<td>€ 12</td>
-						</tr>
-						<tr>
-							<td>Wenkbrauwen</td>
-							<td>€ 12</td>
-						</tr>
-						<tr>
-							<td>Wimpers en wenkbrauwen</td>
-							<td>€ 22</td>
-						</tr>
-					</tbody>
+						))}
+				</tbody>
 				</table>
 			</div>
-
-			<p class="title is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>Extra's</p>
-			<div class="box p-0">
-				<table class="table is-fullwidth is-borderless has-background-{getLightColor(frontmatter?.color)}">
-					<thead class="has-background-{getContrastColor(frontmatter?.color)}">
-						<tr>
-							<th>Epileren/harsen</th>
-							<th>Prijzen</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Bijwerken wenkbrauwen</td>
-							<td>€ 12</td>
-						</tr>
-						<tr>
-							<td>Modelleren wenkbrauwen</td>
-							<td>€ 15</td>
-						</tr>
-						<tr>
-							<td>Harsen bovenlip</td>
-							<td>€ 12</td>
-						</tr>
-						<tr>
-							<td>Harsen kin</td>
-							<td>€ 15</td>
-						</tr>
-						<tr>
-							<td>Harsen Compleet<br />bovenlip, kin, kaak, wangen</td>
-							<td>€ 40</td>
-						</tr>
-						<tr>
-							<td>Harsen Compleet<br /> + Wenkbrauwen</td>
-							<td>€ 50</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			))}
 		</aside>
 	</div>
 </BaseLayout>

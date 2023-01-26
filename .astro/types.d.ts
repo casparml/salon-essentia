@@ -113,6 +113,92 @@ declare module 'astro:content' {
   data: InferEntrySchema<"ervaringen">
 },
 },
+"gezichtsbehandelingen": {
+"bijwerkenwenkbrauwen-.md": {
+  id: "bijwerkenwenkbrauwen-.md",
+  slug: "bijwerkenwenkbrauwen-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"harsenbovenlip-.md": {
+  id: "harsenbovenlip-.md",
+  slug: "harsenbovenlip-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"harsencompleetbovenlipkinkaakwangen-.md": {
+  id: "harsencompleetbovenlipkinkaakwangen-.md",
+  slug: "harsencompleetbovenlipkinkaakwangen-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"harsencompleetwenkbrauwen-.md": {
+  id: "harsencompleetwenkbrauwen-.md",
+  slug: "harsencompleetwenkbrauwen-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"harsenkin-.md": {
+  id: "harsenkin-.md",
+  slug: "harsenkin-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"modellerenwenkbrauwen-.md": {
+  id: "modellerenwenkbrauwen-.md",
+  slug: "modellerenwenkbrauwen-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"overvloed.md": {
+  id: "overvloed.md",
+  slug: "overvloed",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"verrukkung.md": {
+  id: "verrukkung.md",
+  slug: "verrukkung",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"vrijheid.md": {
+  id: "vrijheid.md",
+  slug: "vrijheid",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"wenkbrauwen-.md": {
+  id: "wenkbrauwen-.md",
+  slug: "wenkbrauwen-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"wimpers-.md": {
+  id: "wimpers-.md",
+  slug: "wimpers-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+"wimperswenkbrauwen-.md": {
+  id: "wimperswenkbrauwen-.md",
+  slug: "wimperswenkbrauwen-",
+  body: string,
+  collection: "gezichtsbehandelingen",
+  data: InferEntrySchema<"gezichtsbehandelingen">
+},
+},
 "producten": {
 "aloeveragel-150-ml.md": {
   id: "aloeveragel-150-ml.md",
@@ -477,6 +563,15 @@ declare module 'astro:content' {
   body: string,
   collection: "producten",
   data: InferEntrySchema<"producten">
+},
+},
+"schilderijen": {
+"test-20x32.md": {
+  id: "test-20x32.md",
+  slug: "test-20x32",
+  body: string,
+  collection: "schilderijen",
+  data: InferEntrySchema<"schilderijen">
 },
 },
 

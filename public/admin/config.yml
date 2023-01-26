@@ -24,8 +24,8 @@ collections:
       - {label: "Pagina SubTitle", name: "subtitle", widget: "string"}
       - {label: "Bold Colors", name: "bold", widget: "boolean", default: false}
       - {label: "Pagina Kleur", name: "color", widget: "select", options: [ "is-primary", "is-success", "is-info", "is-link", "is-danger", "is-warning", "is-light", "is-dark"], default: "primary"}
-      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/pages', public_folder: '/uploads/pages', default: /images/essentia-sun}
-      - {label: "Foto Bescrijfing (SEO)", name: "featuredImageAlt", required: false }
+      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/pages', public_folder: '/uploads/pages', default: /images/essentia-sun.png }
+      - {label: "Foto Bescrijfing (SEO)", name: "imageAlt", required: false }
       - {label: "Pagina Text", name: "body", widget: "markdown"}
       - {label: "Korte Pagina Samenvatting (SEO)", name: "description", required: false }
 
@@ -68,8 +68,8 @@ collections:
       - {label: "Product Inhoudsmaat", name: "contentUnit", widget: "select", options: ['l', 'cl', 'ml', 'kg', 'g', 'mg']}
       - {label: "Product Prijs", name: "price", widget: "number", default: "0.00", value_type: "float"}
       - {label: "Product Beschrijving", name: "body", widget: "markdown", required: false}
-      - {label: "Product Foto", name: "image", widget: "image", media_folder: '/public/uploads/products', public_folder: '/uploads/products', required: false, default: /images/essentia-sun}
-      - {label: "Product Foto Beschrijving (SEO)", name: "featuredImageAlt", required: false }
+      - {label: "Product Foto", name: "image", widget: "image", media_folder: '/public/uploads/products', public_folder: '/uploads/products', required: false, default: /images/essentia-sun.png }
+      - {label: "Product Foto Beschrijving (SEO)", name: "imageAlt", required: false }
 
   - name: "massages"
     label: "Massages"
@@ -77,16 +77,61 @@ collections:
     folder: "src/content/massages"
     path: "{{slug}}"
     preview_path: "{{title}}"
+    summary: "{{fields.type}}: {{fields.name}} - {{fields.amount}} X {{fields.content}}{{fields.contentUnit}} voor €{{fields.price}} "
     create: true
     fields:
       - {label: "Publicatie Datum", name: "date", widget: "datetime"}
-      - {label: "Publicatie Volgorde", name: "index", widget: "number"}
+      - {label: "Publicatie Volgorde", name: "index", widget: "number", default: 0}
       - {label: "Massage Naam", name: "title", widget: "string"}
       - {label: "Beschrijving", name: "body", widget: "markdown"}
-      - {label: "Massage Foto", name: "image", widget: "image", media_folder: '/public/uploads/massages', public_folder: '/uploads/massages', required: false, default: /images/essentia-sun}
-      - {name: "featuredImageAlt", label: "Foto Bescrijfing (SEO)", required: false }
+      - {label: "Massage Foto", name: "image", widget: "image", media_folder: '/public/uploads/massages', public_folder: '/uploads/massages', required: false, default: /images/essentia-sun.png }
+      - {name: "imageAlt", label: "Foto Bescrijfing (SEO)", required: false }
 
+  - name: "gezichtsbehandelingen"
+    label: "Gezichtsbehandelingen"
+    label_singular: "Gezichtsbehandeling"
+    folder: "src/content/gezichtsbehandelingen"
+    slug: "{{slug}}-{{fields.duration}}"
+    path: "{{slug}}"
+    preview_path: "{{title}}"
+    summary: "{{fields.type}}: {{fields.title}} - {{fields.duration}}min. voor {{fields.price}} "
+    sortable_fields: ['index', 'title', 'type', 'duration', 'date']
+    create: true
+    fields:
+      - {label: "Publicatie Datum", name: "date", widget: "datetime"}
+      - {label: "Publicatie Volgorde", name: "index", widget: "number", default: 0}
+      - {label: "Type", name: "type", widget: "select", options: ['Gezichtsbehandelingen', 'Verven', "Epileren/harsen"], default: 'Behandelingen'}
+      - {label: "Behandeling Naam", name: "title", widget: "string"}
+      - {label: "Duur in minuten", name: "duration", widget: "number", required: false}
+      - {label: "Prijs", name: "price", widget: "number", default: "0.00", value_type: "float"}
+      - {label: "Beschrijving", name: "body", widget: "markdown", required: false}
+      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/gezichtsbehandelingen', public_folder: '/uploads/gezichtsbehandelingen', required: false, default: /images/essentia-sun.png}
+      - {label: "Foto Bescrijfing (SEO)", name: "imageAlt", required: false }
 
+  - name: "schilderijen"
+    label: "Schilderijen"
+    label_singular: "Schilderij"
+    identifier_field: 'name'
+    folder: "src/content/schilderijen"
+    slug: "{{slug}}-{{fields.width}}x{{fields.height}}"
+    path: "{{slug}}"
+    preview_path: "/schilderijen/{{slug}}"
+    sortable_fields: ['index', 'name', 'type', 'brand']
+    summary: "{{fields.name}}: {{fields.method}} op {{fields.material}} - {{fields.width}}X{{fields.height}} €{{fields.price}} "
+    create: true
+    fields:
+      - {label: "Publicatie Datum", name: "date", widget: "datetime"}
+      - {label: "Publicatie Volgorde", name: "index", widget: "number", default: 0}
+      - {label: "Schilderij Naam", name: name, widget: "string"}
+      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/schilderijen', public_folder: '/uploads/schilderijen', default: /images/essentia-sun.png }
+      - {label: "Foto Beschrijving (SEO)", name: "imageAlt", required: false, default: 'Schilderij'}
+      - {label: "Methode", name: "method", widget: "select", multiple: true, options: ['Olieverf', 'Waterverf', 'Aquarel', 'WasKrijt', 'Potlood'], default: 'Olieverf'}
+      - {label: "Ondergrond", name: "material", widget: "select", options: ['Canvas', 'Doek', 'Papier'], default: 'Canvas'}
+      - {label: "Breedte (in CM's)", name: "width", widget: "number", default: 0}
+      - {label: "Hoogte (in CM'S)", name: "height", widget: "number", default: 0}
+      - {label: "Ingelijst", name: "framed", widget: "boolean", default: false}
+      - {label: "Prijs", name: "price", widget: "number", default: "0.00", value_type: "float"}
+      - {label: "Beschrijving", name: "body", widget: "markdown", required: false}
 
     # adding a meta object with a path property allows editing the path of entries
     # moving an existing entry will move the entire sub tree of the entry to the new location

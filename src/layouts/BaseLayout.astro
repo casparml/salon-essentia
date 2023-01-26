@@ -67,13 +67,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </head>
 <body>
 	<PageTransition speed={500} color="hsl(44deg, 100%, 77%)" zIndex={99} />
-
 	<header class={"hero is-fullheight-with-navbar has-background " + herostyles() + ' ' + size + ' ' + color} >
 		<!-- Hero Image: will provide an image covering the whole Hero -->
 		<Image loading="lazy" decoding="async" aspectRatio={16/9} width="1920" class="hero-image" src={image} alt={subtitle} title={title} />
 		<!-- Hero head: will stick at the top -->
 		<div class="hero-head">
-			<Nav color={color} />
+			<Nav />
 		</div>
 		<!-- Hero content: will be in the middle -->
 		<div class="hero-body">

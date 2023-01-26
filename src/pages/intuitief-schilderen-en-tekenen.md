@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BaseLayout.astro
+layout: ../layouts/GalleryLayout.astro
 index: 5
 title: Intuïtief schilderen en tekenen
 subtitle: Naast mijn werk in mijn praktijk heb ik ook een passie voor tekenen en schilderen.

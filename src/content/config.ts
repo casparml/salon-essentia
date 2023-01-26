@@ -4,8 +4,8 @@ import { z, defineCollection } from 'astro:content';
 // Pages
 // const pagesCollection = defineCollection({
 //     schema: z.object({
-//         index: z.number(),
-//         title: z.string(),
+    //         index: z.number(),
+    //         title: z.string(),
 //         subtitle: z.string(),
 //         image: z.string().optional(),
 //         description: z.string(),
@@ -27,14 +27,30 @@ const ervaringenCollection = defineCollection({
 // massages
 const massagesCollection = defineCollection({
     schema: z.object({
+        date: z.date(),
         index: z.number(),
         title: z.string(),
         image: z.string().optional(),
+        imageAlt: z.string().optional(),
+    })
+});
+// gezichtsbehandelingen
+const gezichtsbehandelingenCollection = defineCollection({
+    schema: z.object({
+        date: z.date(),
+        index: z.number(),
+        title: z.string(),
+        type: z.string(),
+        duration: z.number().optional(),
+        price: z.number(),
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
     })
 });
 // Producten
 const productenCollection = defineCollection({
     schema: z.object({
+        date: z.date(),
         index: z.number(),
         name: z.string(),
         date: z.date(),
@@ -44,6 +60,23 @@ const productenCollection = defineCollection({
         type: z.string(),
         price: z.number(),
         image: z.string().optional(),
+        imageAlt: z.string().optional(),
+    })
+});
+// Schilderijen
+const schilderijenCollection = defineCollection({
+    schema: z.object({
+        index: z.number(),
+        date: z.date(),
+        name: z.string(),
+        width: z.number(),
+        height: z.number(),
+        framed: z.boolean(),
+        method: z.array(z.string()),
+        material: z.string(),
+        price: z.number(),
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
     })
 });
 // 3. Export a single `collections` object to register your collection(s)
@@ -51,5 +84,7 @@ const productenCollection = defineCollection({
 export const collections = {
   'ervaringen': ervaringenCollection,
   'massages': massagesCollection,
+  'schilderijen': schilderijenCollection,
+  'gezichtsbehandelingen': gezichtsbehandelingenCollection,
   'producten': productenCollection,
 };

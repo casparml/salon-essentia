@@ -156,8 +156,8 @@
 			var image = entry.getIn(['data', 'image']);
 			var bg = this.props.getAsset(image);
 
-			return h('div', {className:  getLightBackgroundColor('is-info')},
-				h('h3', {className: 'title has-text-centered is-size-4 pt-4 ' + getTextColor('is-info')}, 'Product voorbeeld'),
+			return h('div', {className:  getLightBackgroundColor('is-success')},
+				h('h3', {className: 'title has-text-centered is-size-4 pt-4 ' + getTextColor('is-success')}, 'Product voorbeeld'),
 				h('section', {className: 'section'},
 					h('div', {className: 'container'},
 						h('div', {className: 'columns is-vcentered is-multiline'},
@@ -225,6 +225,123 @@
 		});
 		CMS.registerPreviewTemplate("ervaringen", ErvaringenPreview);
 
+		var SchilderijenPreview = createClass({
+			render: function() {
+			var entry = this.props.entry;
+			var image = entry.getIn(['data', 'image']);
+			var bg = this.props.getAsset(image);
+
+			return h('div', {className:  getLightBackgroundColor('is-info')},
+				h('h3', {className: 'title has-text-centered is-size-4 pt-4 ' + getTextColor('is-info')}, 'Schilderij voorbeeld'),
+				h('section', {className: 'section'},
+					h('div', {className: 'container'},
+						h('div', {className: 'columns is-vcentered is-multiline'},
+							h('div', {className: 'column is-6-tablet is-3-desktop'},
+								h('h3', {className: 'is-size-3-mobile is-size-4-desktop title'}, entry.getIn(['data', 'name'])),
+								h('h4', {className: 'is-size-3-mobile is-size-4-desktop subtitle'},
+								    this.props.widgetsFor('method').map(method => (
+										h('span', {}, method)
+									)),
+									h('span', {}, + ' op ' + entry.getIn(['data', 'material'])),
+									h('br', {}),
+									h('span', {}, entry.getIn(['data', 'width']) + 'cm x ' + entry.getIn(['data', 'height']) + 'cm'),
+								),
+								h('p', {className: "content"}, this.props.widgetFor('body')),
+							),
+							h('div', {className: 'column is-6-tablet is-5-desktop has-text-centered'},
+								h('img', {className: 'p-6', src: bg.toString(), alt: 'Schilderij Foto'}),
+							),
+							h('div', {className: 'column is-12-tablet is-4-desktop'},
+								h('div', {className: 'is-size-4 mb-4'}, '€' + entry.getIn(['data', 'price'])),
+								h('p', {className: 'mb-4'}, entry.getIn(['data', 'description'])),
+							),
+						),
+					),
+				),
+				h('section', {className: 'section'},
+					h('div', {className: 'container'},
+						h('div', {className: 'columns mt-5 is-8 is-variable is-centered'},
+							h('div', {className: 'column is-5-tablet is-4-desktop'},
+								h('div', {className: 'card'},
+									h('div', {className: 'card-image has-text-centered px-6'},
+										h('img', {alt: 'schilderij', src: bg.toString()}),
+									),
+									h('div', {className: 'card-content'},
+										h('p', {}, '€' + entry.getIn(['data', 'price'])),
+										h('h3', {className: 'title is-size-5'}, entry.getIn(['data', 'name'])),
+										h('h5', {className: 'subtitle is-size-5'},  entry.getIn(['data', 'method']) + ' op ' + entry.getIn(['data', 'material']) + ' - ' + (entry.getIn(['data', 'width']) | 'breedte') + 'cm x ' + entry.getIn(['data', 'height']) + 'cm' ),
+									),
+									h('footer', {className: 'card-footer'},
+										h('p', {className: 'card-footer-item'},
+											h('a', {className: 'has-text-grey'}, 'Kopen'),
+										),
+									),
+								),
+							),
+						),
+					),
+				),
+			);
+			}
+		});
+		CMS.registerPreviewTemplate("schilderijen", SchilderijenPreview);
+
+		// Gezichtsbehandelingen
+		var GezichtsbehandelingenPreview = createClass({
+			render: function() {
+			var entry = this.props.entry;
+			var image = entry.getIn(['data', 'image']);
+			var bg = this.props.getAsset(image);
+
+			return h('div', {className:  getLightBackgroundColor('is-info')},
+				h('h3', {className: 'title has-text-centered is-size-4 pt-4 ' + getTextColor('is-info')}, 'Gezichtsbehandelingen voorbeeld'),
+				h('section', {className: 'section'},
+					h('div', {className: 'container'},
+						h('div', {className: 'columns is-vcentered is-multiline'},
+							h('div', {className: 'column is-6-tablet is-3-desktop'},
+								h('h3', {className: 'is-size-3-mobile is-size-4-desktop title'}, entry.getIn(['data', 'title'])),
+								h('h4', {className: 'is-size-3-mobile is-size-4-desktop subtitle'},
+								),
+								h('h5', {}, (entry.getIn(['widgets', 'duration']) | '-') + ' minuten'),
+								h('p', {className: "content"}, this.props.widgetFor('body')),
+							),
+							h('div', {className: 'column is-6-tablet is-5-desktop has-text-centered'},
+								h('img', {className: 'p-6', src: bg.toString(), alt: 'Gezichtsbehandeling Foto'}),
+							),
+							h('div', {className: 'column is-12-tablet is-4-desktop'},
+								h('div', {className: 'is-size-4 mb-4'}, '€' + entry.getIn(['data', 'price'])),
+								h('p', {className: 'mb-4'}, entry.getIn(['data', 'description'])),
+							),
+						),
+					),
+				),
+				h('section', {className: 'section'},
+					h('div', {className: 'container'},
+						h('div', {className: 'columns mt-5 is-8 is-variable is-centered'},
+							h('div', {className: 'column is-5-tablet is-4-desktop'},
+								h('div', {className: 'card'},
+									h('div', {className: 'card-image has-text-centered px-6'},
+										h('img', {alt: 'Gezichtsbehandeling', src: bg.toString()}),
+									),
+									h('div', {className: 'card-content'},
+										h('p', {}, '€' + entry.getIn(['data', 'price'])),
+										h('h3', {className: 'title is-size-5'}, entry.getIn(['data', 'title'])),
+										h('h5', {className: 'subtitle is-size-5'},  entry.getIn(['data', 'duration']) + ' minuten' ),
+									),
+									h('footer', {className: 'card-footer'},
+										h('p', {className: 'card-footer-item'},
+											h('a', {className: 'has-text-grey'}, 'Behandeling Boeken'),
+										),
+									),
+								),
+							),
+						),
+					),
+				),
+			);
+			}
+		});
+		CMS.registerPreviewTemplate("gezichtsbehandelingen", GezichtsbehandelingenPreview);
 
 	</script>
 

@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+
+import { Image } from '@astrojs/image/components';
+import { getBackgroundColor, getHighlightTextColor, getTextColor } from '@lib/helpers';
+const { frontmatter } = Astro.props
+
+const allSchilderijen = await getCollection('schilderijen');
+---
+
+<BaseLayout {frontmatter}>
+	<div class="content">
+		<slot />
+	</div>
+	<h4 class="title">Mijn Schilderijen en Tekeningen</h4>
+	<div class="columns is-multiline">
+		{allSchilderijen.map(painting => (
+		<div class={"column is-one-quarter-desktop is-half-tablet " + getTextColor(frontmatter.color)}>
+			<article class="card">
+				<header class="card-image">
+					<figure class="image">
+						<Image width="640" height="480" src={painting.data.image} alt={painting.data.imageAlt || painting.data.title}>
+					</figure>
+					<div class="card-content is-overlay is-clipped">
+						<span class={"tag is-medium " + frontmatter.color}>
+							{painting.data.method.map(method => (
+							<span>
+								{method}
+							</span>
+							))}
+							op {painting.data.material}
+						</span>
+					</div>
+				</header>
+				<main class="card-content">
+					<h5 class={"is-size-5-mobile is-size-6-desktop title" + getTextColor(frontmatter.color)} >
+						{painting.data.name}
+					</h5>
+					<div >
+						{painting.body}
+					</div>
+				</main>
+				<footer class="card-footer">
+
+					<div class="card-footer-item">
+							{painting.data.width + 'cm x ' + painting.data.height + 'cm'}
+					</div>
+					<div class={"card-footer-item " + getBackgroundColor(frontmatter.color) + " " + getHighlightTextColor(frontmatter.color)}>
+						<p class="is-size-5-mobile is-size-6-desktop">
+							<b>
+								{Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(painting.data.price)}
+							</b>
+						</p>
+					</div>
+				</footer>
+			</article>
+		</div>
+		))}
+	</div>
+</BaseLayout>

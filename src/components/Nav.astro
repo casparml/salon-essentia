@@ -1,7 +1,8 @@
 ---
     import { getTextColor, getLightBackgroundColor, getHighlightTextColor, getBackgroundColor } from '../lib/helpers';
 
-    export let color:string = "is-warning"
+    const { frontmatter } = Astro.props
+    const color = frontmatter?.color ? frontmatter.color : 'is-warning'
 
     // imports all files that end with `.md` in `./src/pages/post/`
     const pages = await Astro.glob('../pages/*.md');
@@ -10,15 +11,12 @@
 
     function getLinkClasses(page) {
         let classes = " "
-         classes += ('/' + currentPath == page.url) ? getBackgroundColor(page.frontmatter.color) + " " : ""
-        classes += ('/' + currentPath == page.url) ? getHighlightTextColor(page.frontmatter.color) + " " : getTextColor(page.frontmatter.color) + " "
+        classes += ('/' + currentPath == page.url || !currentPath && !page.url) ? getTextColor(page.frontmatter.color) + " " + getBackgroundColor(page.frontmatter.color) + " is-active " + getHighlightTextColor(page.frontmatter.color) + " "  : " " + getTextColor(page.frontmatter.color) + " "
         return classes
     }
-
-    let isActive = true
 ---
 
-<div class={"navbar is-spaced " + color}>
+<div class={"navbar is-spaced " + color }>
 
     <!-- for toggling functionality. Should be at the same level as navbar-menu -->
     <input type="checkbox" id="toggler" class="toggler" />
@@ -27,7 +25,7 @@
         <a href="/" class={"navbar-item is-hidden-mobile is-active " + getBackgroundColor(color) + " " + getTextColor(color)} style="background-image: url('/images/essentia-sun.png'); background-repeat: no-repeat; background-size: contain; height: 65px;">
             <h1 class={"title is-size-5 branding-font pl-3 " + getTextColor(color)}>Essentia</h1>
         </a>
-        <label for="toggler" class={"navbar-burger is-transparent " + getLightBackgroundColor(color) + " " + getTextColor(color)} data-target="navbarMenuHeroC">
+        <label for="toggler" class={"navbar-burger is-transparent " + getBackgroundColor(color) + " " + getTextColor(color)} data-target="navbarMenuHeroC">
             <span></span>
             <span></span>
             <span></span>
@@ -36,9 +34,9 @@
 
     <div class="navbar-backdrop"></div>
 
-    <div id="navbarMenuHeroC" class="navbar-menu">
+    <div id="navbarMenuHeroC" class={"navbar-menu"}>
 
-        <div class={"navbar-start is-transparent in:fly-y:-200duration:500 out:fade " + getLightBackgroundColor(color) + ' ' + getTextColor(color)}>
+        <div class={"navbar-start in:fly-y:-200duration:500 out:fade " + getLightBackgroundColor(color) + ' ' + getTextColor(color)}>
             {pages.sort((obj1, obj2) =>
                 obj1.frontmatter.index - obj2.frontmatter.index
             ).map((page) => (
