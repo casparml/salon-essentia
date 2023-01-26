@@ -1,6 +1,7 @@
 ---
 import '../styles/app.scss'
 // import { pwaInfo } from 'virtual:pwa-info';
+import { PageTransition } from 'astro-page-transition';
 
 import { Icon } from 'astro-icon'
 
@@ -20,6 +21,9 @@ function herostyles(){
 	+ image ? ' has-background ' : carousel ? 'is-carousel ' : 'has-background'
 
 }
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
 ---
 
 <!DOCTYPE html>
@@ -44,6 +48,7 @@ function herostyles(){
 		title: 'Salon Essentia - ' + title,
 		description: description,
 		url: Astro.request.url.toString(),
+		canonical: canonicalURL,
 		site_name: "Salon Essentia",
 		type: "website",
 		locale: "nl_NL",
@@ -61,6 +66,8 @@ function herostyles(){
 	/>
 </head>
 <body>
+	<PageTransition speed={500} color="hsl(44deg, 100%, 77%)" zIndex={99} />
+
 	<header class={"hero is-fullheight-with-navbar has-background " + herostyles() + ' ' + size + ' ' + color} >
 		<!-- Hero Image: will provide an image covering the whole Hero -->
 		<Image loading="lazy" decoding="async" aspectRatio={16/9} width="1920" class="hero-image" src={image} alt={subtitle} title={title} />
