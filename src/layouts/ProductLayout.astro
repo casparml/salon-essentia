@@ -4,17 +4,6 @@ import BaseLayout from './BaseLayout.astro';
 import { Image } from '@astrojs/image/components';
 import { groupByType } from '@lib/helpers';
 
-interface Producten {
-	date: Date;
-	index: number;
-	title: string;
-	brand: string;
-	content: string;
-	contentUnit: string;
-	price: string;
-	image: string;
-}
-
 interface Frontmatter {
 	title: string;
 	subtitle: string;

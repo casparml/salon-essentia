@@ -1,9 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from '@astrojs/image/components';
+
+import { getBackgroundColor, getHighlightTextColor, getTextColor } from '@lib/helpers';
+
 import BaseLayout from './BaseLayout.astro';
 
-import { Image } from '@astrojs/image/components';
-import { getBackgroundColor, getHighlightTextColor, getTextColor } from '@lib/helpers';
 const { frontmatter } = Astro.props
 
 const allSchilderijen = await getCollection('schilderijen');

@@ -199,6 +199,78 @@ declare module 'astro:content' {
   data: InferEntrySchema<"gezichtsbehandelingen">
 },
 },
+"massages": {
+"aromamassagerug.md": {
+  id: "aromamassagerug.md",
+  slug: "aromamassagerug",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"bashyachoumassage.md": {
+  id: "bashyachoumassage.md",
+  slug: "bashyachoumassage",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"bindweefselmassagegelaatlichaam.md": {
+  id: "bindweefselmassagegelaatlichaam.md",
+  slug: "bindweefselmassagegelaatlichaam",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"drummassage.md": {
+  id: "drummassage.md",
+  slug: "drummassage",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"handvoetmassage.md": {
+  id: "handvoetmassage.md",
+  slug: "handvoetmassage",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"hotstonemassage.md": {
+  id: "hotstonemassage.md",
+  slug: "hotstonemassage",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"lymfedrainagegelaatdr-voddermethode.md": {
+  id: "lymfedrainagegelaatdr-voddermethode.md",
+  slug: "lymfedrainagegelaatdr-voddermethode",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"ontspanningsmassage.md": {
+  id: "ontspanningsmassage.md",
+  slug: "ontspanningsmassage",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"reiki.md": {
+  id: "reiki.md",
+  slug: "reiki",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+"scrubmassagerug.md": {
+  id: "scrubmassagerug.md",
+  slug: "scrubmassagerug",
+  body: string,
+  collection: "massages",
+  data: InferEntrySchema<"massages">
+},
+},
 "producten": {
 "aloeveragel-150-ml.md": {
   id: "aloeveragel-150-ml.md",

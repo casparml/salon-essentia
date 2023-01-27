@@ -1,53 +1,63 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-    import { getContrastColor } from "../lib/helpers"
-    let image3391 = '/images/3391-landscape.jpg'
-    let image3392 = '/images/3392-landscape.jpg'
-    let image3410 = '/images/3384-landscape.jpg'
-    let image3454 = '/images/3454-portrait.jpg'
-    let image3466 = '/images/3466-portrait.jpg'
-    let image3470 = '/images/3470-portrait.jpg'
-    let image3505 = '/images/3505-portrait.jpg'
-    let image3518 = '/images/3518-portrait.jpg'
-    let image3547 = '/images/3547-portrait.jpg'
+    // import { getCollection } from 'astro:content';
+    import { Image } from '@astrojs/image/components';
 
-	const { frontmatter } = Astro.props;
+    import { getContrastColor, getTextColor } from "../lib/helpers"
+
+    import BaseLayout from './BaseLayout.astro';
+
+// const massages = getCollection('massages');
+interface Massages {
+  title: string;
+  index: number;
+  date: Date;
+}
+
+interface Frontmatter {
+  title: string;
+  subtitle: string;
+  color: string;
+  bold: boolean;
+  image: string;
+  imageAlt: string;
+  date: Date;
+  index: number;
+  description?: string;
+}
+
+const frontmatter:Frontmatter = Astro.props.frontmatter
+
+const massages = await Astro.glob<Massages>('../content/massages/*.md');
 ---
 
 <BaseLayout {frontmatter}>
 	<div class="container">
 		<slot />
         <div class="notification box is-warning"><b>Let op! Salon Essentia heeft nieuwe prijzen vanaf 1 januari 2023.</b><br />Onder voorbehoud van fouten en wijzigingen.</div>
-        <div class="box p-5 is-notification">
+        {massages && massages?.sort((obj1, obj2) => {
+                return obj1.frontmatter.index < obj2.frontmatter.index
+            }).map((massage) => (
+          <div class="box p-5 is-notification">
             <div class="columns">
                 <div class="column is-one-fifth">
                     <div class="box p-0 is-hidden-flow">
                         <figure class="image">
-                            <img loading="lazy" decoding="async" alt="Foto 3481" src={image3466} />
+                            <Image width="640" height="640" aspectRatio={1/1} loading="lazy" decoding="async" alt={massage.frontmatter.imageAlt ? massage.frontmatter.imageAlt : massage.frontmatter.title}} src={massage.frontmatter.image} />
                         </figure>
                     </div>
                 </div>
                 <div>
-                    <div class="column">
-                        <p class="title is-size-4" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
-                            Bashya Chou Massage
+                    <div class="column ">
+                        <p class={"title is-size-4 " + getTextColor(frontmatter?.color)}>
+                            {massage.frontmatter.title}
                         </p>
-                        <p class="subtitle is-size-5" class:list={['has-text-' + getContrastColor(frontmatter?.color)]}>
-                            Los:<br />
-                            30 minuten €30<br />
-                            Kuur:<br />
-                            5 X 30 minuten €135<br />
-                        </p>
-                        <p>
-                            Een massage ritueel van ca. 30 minuten, waarin hoofdhuid/haar en oren wordt behandeld. Een moment van totale ontspanning, het maakt je hoofd leeg, trekt spanningen weg (kan het stresshormoon cortisol laten dalen) en brengt je naar je eigen stiltepunt.
-                            Zit je in een periode van veel stress dan is deze behandeling 1x in de week, voor een aantal weken aan te raden. Ook bij kinderen heeft deze massage een positief effect.
-                        </p>
+                        <massage.default />
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="box p-5 is-notification">
+		))}
+        <!-- <div class="box p-5 is-notification">
             <div class="columns">
                 <div class="column is-one-fifth">
                     <div class="box p-0 is-hidden-flow">
@@ -288,6 +298,6 @@ import BaseLayout from './BaseLayout.astro';
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
 	</div>
 </BaseLayout>

@@ -36,6 +36,7 @@ collections:
     folder: "src/content/ervaringen"
     path: "{{slug}}"
     preview_path: "{{name}}"
+    sortable_fields: ['index', 'title' ]
     summary: "{{name}}: {{fields.title}} "
     create: true
     fields:
@@ -77,7 +78,7 @@ collections:
     folder: "src/content/massages"
     path: "{{slug}}"
     preview_path: "{{title}}"
-    summary: "{{fields.type}}: {{fields.name}} - {{fields.amount}} X {{fields.content}}{{fields.contentUnit}} voor €{{fields.price}} "
+    sortable_fields: ['index', 'title' ]
     create: true
     fields:
       - {label: "Publicatie Datum", name: "date", widget: "datetime"}
