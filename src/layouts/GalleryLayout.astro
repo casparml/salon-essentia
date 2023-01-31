@@ -31,16 +31,16 @@ const allSchilderijen = await getCollection('schilderijen');
 								{method}
 							</span>
 							))}
-							op {painting.data.material}
+							&nbsp;op {painting.data.material}
 						</span>
 					</div>
 				</header>
 				<main class="card-content">
 					<h5 class={"is-size-5-mobile is-size-6-desktop title" + getTextColor(frontmatter.color)} >
-						{painting.data.name}
+						{painting.data.name || ""}
 					</h5>
 					<div >
-						{painting.body}
+						{painting.body || ""}
 					</div>
 				</main>
 				<footer class="card-footer">
@@ -48,13 +48,13 @@ const allSchilderijen = await getCollection('schilderijen');
 					<div class="card-footer-item">
 							{painting.data.width + 'cm x ' + painting.data.height + 'cm'}
 					</div>
-					<div class={"card-footer-item " + getBackgroundColor(frontmatter.color) + " " + getHighlightTextColor(frontmatter.color)}>
+					<!--div class={"card-footer-item " + getBackgroundColor(frontmatter.color) + " " + getHighlightTextColor(frontmatter.color)}>
 						<p class="is-size-5-mobile is-size-6-desktop">
 							<b>
 								{Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(painting.data.price)}
 							</b>
 						</p>
-					</div>
+					</div-->
 				</footer>
 			</article>
 		</div>
