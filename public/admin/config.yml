@@ -131,8 +131,7 @@ collections:
       - {label: "Doek", name: "material", widget: "select", options: ['Katoen', 'Papier', 'Pastelpapier'], default: 'Katoen'}
       - {label: "Breedte (in CM's)", name: "width", widget: "number", default: 0}
       - {label: "Hoogte (in CM'S)", name: "height", widget: "number", default: 0}
-      - {label: "Ingelijst", name: "framed", widget: "boolean", default: false}
-      - {label: "Prijs", name: "price", widget: "number", default: "0.00", value_type: "float"}
+      - {label: "Prijs", name: "price", widget: "number", default: "0.00", value_type: "float", required: false}
       - {label: "Beschrijving", name: "body", widget: "markdown", required: false}
 
     # adding a meta object with a path property allows editing the path of entries
