@@ -1,11 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-  # name: github
-  # repo: ezriharmusial/LastMessengerS
-  # branch: main
-  # base_url: 'https://lastmessengers.artkidsfoundation.org'
-  # auth_endpoint: 'api/admin/auth'
 # Local testing
 local_backend: true
 collections:
@@ -147,11 +142,6 @@ slug:
   sanitize_replacement: ""
 show_preview_links: false
 
-# media_library:
-#   name: cloudinary
-#   config:
-#     cloud_name: artkids-foundation
-#     api_key: 263829663159721
 locale: 'nl'
 site_url: https://salonessentia.nl
 display_url: https://salonessentia.nl
