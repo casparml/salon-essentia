@@ -7,6 +7,6 @@ type: Multi Use Oil
 amount: 1
 content: 150
 contentUnit: ml
+price: 39.95
 image: /images/essentia-sun.png
-price: 38.95
 ---
