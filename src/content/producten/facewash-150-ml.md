@@ -7,6 +7,6 @@ type: Reiniging
 amount: 1
 content: 150
 contentUnit: ml
+price: 23
 image: /images/essentia-sun.png
-price: 19.5
 ---
