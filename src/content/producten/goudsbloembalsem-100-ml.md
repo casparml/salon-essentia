@@ -7,6 +7,6 @@ type: Gezichtscrème
 amount: 1
 content: 100
 contentUnit: ml
+price: 26.55
 image: /images/essentia-sun.png
-price: 22.5
 ---
