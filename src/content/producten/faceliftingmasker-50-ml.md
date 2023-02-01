@@ -7,6 +7,6 @@ type: Masker
 amount: 1
 content: 50
 contentUnit: ml
+price: 34
 image: /images/essentia-sun.png
-price: 30
 ---
