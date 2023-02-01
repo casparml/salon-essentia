@@ -7,6 +7,6 @@ type: Dode Zee Body Scrub
 amount: 1
 content: 350
 contentUnit: ml
+price: 39.95
 image: /images/essentia-sun.png
-price: 37.95
 ---
