@@ -7,6 +7,6 @@ type: Lichaam / benen / voeten / handen
 amount: 1
 content: 150
 contentUnit: ml
+price: 27.5
 image: /images/essentia-sun.png
-price: 22
 ---
