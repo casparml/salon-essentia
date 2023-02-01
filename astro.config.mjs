@@ -57,7 +57,7 @@ export default defineConfig({
       },
     })]
   },
-  site: 'http://localhost:3001',
+  site: 'https://salonessentia.nl',
   integrations: [image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), prefetch(), sitemap()
