@@ -7,6 +7,6 @@ type: Dode Zee Face Scrub
 amount: 1
 content: 200
 contentUnit: ml
+price: 37
 image: /images/essentia-sun.png
-price: 34.5
 ---
