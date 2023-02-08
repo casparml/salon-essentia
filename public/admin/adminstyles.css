@@ -9826,10 +9826,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: hsl(0deg, 0%, 98%);
   padding: 3rem 1.5rem 6rem;
 }
-@font-face {
-  font-family: "segoe-print-regular";
-  src: url("https://www.dafontfree.net/data/46/s/61686/segoepr.ttf") format("woff"), url("https://www.dafontfree.net/data/46/s/61686/segoepr.ttf") format("opentype"), url("https://www.dafontfree.net/data/46/s/61686/segoepr.ttf") format("truetype");
-}
 body {
   font-size: 20px;
   font-family: "Segoe Pro";
@@ -9853,22 +9849,26 @@ body {
   background: white;
 }
 .branding-font {
-  font-family: "Segoe Print";
+  font-family: "Fuzzy Bubbles";
 }
-
+.nav-item {
+  font-family: "Gloria Hallelujah";
+  font-weight: 800;
+}
 h1,
 h2,
 h3,
 .title {
+  font-family: "Segoe Pro";
   font-weight: 800;
-  font-family: "Segoe Print";
+  text-transform: uppercase;
 }
 h4,
 h5,
 h6,
 .subtitle {
   font-family: "Segoe Pro Display";
-  font-weight: 600;
+  font-weight: 350;
 }
 header.hero .hero-image {
   display: none;
@@ -9996,9 +9996,8 @@ table.table *:last-child tr:last-child td:last-child {
       }
     }
 
-        .navbar-item,
-  .branding-font{
-      font-family: 'Segoe Print';
+    .navbar-item {
+      font-family: 'Gloria Hallelujah';
   }
 
   .navbar {

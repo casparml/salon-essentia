@@ -15,6 +15,7 @@
         return classes
     }
 ---
+<div class="container">
 
 <div class={"navbar is-spaced " + color }>
 
@@ -23,7 +24,7 @@
 
     <div class="navbar-brand ml-3 in:fade">
         <a href="/" class={"navbar-item is-hidden-mobile is-active " + getBackgroundColor(color) + " " + getTextColor(color)} style="background-image: url('/images/essentia-sun.png'); background-repeat: no-repeat; background-size: contain; height: 65px;">
-            <h1 class={"title is-size-5 branding-font pl-3 " + getTextColor(color)}>Essentia</h1>
+            <h1 class={"is-size-5 branding-font pl-3 " + getTextColor(color)}>Essentia</h1>
         </a>
         <label for="toggler" class={"navbar-burger is-transparent " + getBackgroundColor(color) + " " + getTextColor(color)} data-target="navbarMenuHeroC">
             <span></span>
@@ -50,11 +51,11 @@
         </div>
     </div>
 </div>
+</div>
 
 <style lang="scss">
-    .navbar-item,
     .branding-font{
-        font-family: 'Segoe Print';
+        font-family: 'Fuzzy Bubbles';
     }
 
     .navbar {

@@ -13,9 +13,12 @@ $link: #693abb;
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Gloria+Hallelujah&display=swap');
+
 body {
     font-size: 20px;
     font-family: 'Segoe Pro';
+    font-weight: 350;
 }
 
 ::-webkit-scrollbar {
@@ -40,17 +43,23 @@ body {
 }
 
 .branding-font {
-    font-family: 'Segoe Print';
+    font-family: 'Fuzzy Bubbles';
+}
+
+.navbar-item {
+    font-family: 'Gloria Hallelujah';
 }
 
 .title {
+    font-family: 'Segoe Pro';
     font-weight: 800;
-    font-family: 'Segoe Print';
+    text-transform: uppercase;
 }
 
 .subtitle {
     font-family: 'Segoe Pro Display';
-    font-weight: 600;
+    font-weight: 350;
+    text-transform: uppercase
 }
 
 header.hero {
