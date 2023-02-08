@@ -87,24 +87,42 @@ export default defineConfig({
   //   },
   // }),
   , webmanifest(
-    {
-      /**
-       * required
-       **/
-      name: 'Salon Essentia.nl',
-
-      /**
-       * optional
-       **/
-      icon: 'public/images/essentia-sun.png', // source for favicon & icons
-
-      short_name: 'Essentia',
-      description: 'Uw plek voor complete verzorging tot in de kern',
-      start_url: '/',
-      theme_color: '#3367D6',
-      background_color: '#3367D6',
-      display: 'standalone',
-    }
+  {
+    "name": "Salon Essentia.nl",
+    "icon": "/images/essentia-sun.png",
+    "short_name": "Essentia",
+    "description": "Uw plek voor complete verzorging tot in de kern",
+    "start_url": "/",
+    "theme_color": "#514350",
+    "background_color": "#514350",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "/images/manifest/manifest-icon-192.maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/images/manifest/manifest-icon-192.maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/images/manifest/manifest-icon-512.maskable.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/images/manifest/manifest-icon-512.maskable.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  }
   )],
   output: "server",
   adapter: netlify()
