@@ -23,7 +23,7 @@
     <input type="checkbox" id="toggler" class="toggler" />
 
     <div class="navbar-brand ml-3 in:fade">
-        <a href="/" class={"is-hidden-mobile "}>
+        <a href="/">
             <h1 class={"is-size-5 branding-font is-sr-only pl-3 " + getTextColor(color)}>Essentia</h1>
             <img src="/images/logo-complete-small.png" alt="Salon Essentia - Pure schoonheid tot in de kern"/>
         </a>
@@ -62,6 +62,10 @@
     .navbar {
         height: 98px;
         z-index: 199;
+    }
+
+    .navbar-brand img {
+        filter: drop-shadow(5px 5px 5px #222);
     }
 
     /* We don't need checkbox to be displayed in order for it to work */
@@ -181,6 +185,18 @@
         border-radius: 1rem;
     }
 
+
+    @media screen and (max-width: 1023px) and (orientation: portrait) {
+        .navbar-brand {
+            margin-top: 1rem;
+            margin-left: 6rem;
+
+            img {
+                transform: translate(7rem, 0)
+            }
+        }
+    }
+
     @media screen and (max-width: 768px) {
         .navbar-burger {
             left: 1rem;
@@ -214,6 +230,14 @@
         .navbar .navbar-menu {
             background: #f5f5f5 !important;
             color: black !important;
+        }
+        .navbar-brand {
+            margin-top: 1rem;
+            margin-left: 6rem;
+
+            img {
+                transform: translate(3rem, -15rem)
+            }
         }
     }
 
