@@ -87,7 +87,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<!-- Hero content: will be in the middle -->
 		<div class="hero-body">
 			<div class="container">
-				<div class={"box notification is-transparent content " + getLightBackgroundColor(color)} style="max-width: 440px;">
+				<div class={"box notification is-transparent " + getLightBackgroundColor(color)} style="max-width: 440px;">
 					<h2 class={"title is-size-4 " + getTextColor(color)}>{title}</h2>
 					<h3 class={"subtitle is-size-5 " + getTextColor(color)}>{subtitle}</h3>
 					<div class={"content " + getTextColor(color)}>

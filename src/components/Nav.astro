@@ -22,9 +22,10 @@
     <!-- for toggling functionality. Should be at the same level as navbar-menu -->
     <input type="checkbox" id="toggler" class="toggler" />
 
-    <div class="navbar-brand ml-3 in:fade">
-        <a href="/" class={"navbar-item is-hidden-mobile is-active " + getBackgroundColor(color) + " " + getTextColor(color)} style="background-image: url('/images/essentia-sun.png'); background-repeat: no-repeat; background-size: contain; height: 65px;">
-            <h1 class={"is-size-5 branding-font pl-3 " + getTextColor(color)}>Essentia</h1>
+    <div class="navbar-brand flex-col-reverse ml-3 in:fade">
+        <a href="/" class={"is-hidden-mobile "}>
+            <h1 class={"is-size-5 branding-font is-sr-only pl-3 " + getTextColor(color)}>Essentia</h1>
+            <img src="/images/logo-complete-small.png" alt="Salon Essentia - Pure schoonheid tot in de kern" />
         </a>
         <label for="toggler" class={"navbar-burger is-transparent " + getBackgroundColor(color) + " " + getTextColor(color)} data-target="navbarMenuHeroC">
             <span></span>
@@ -129,7 +130,7 @@
             background: rgba(0, 0, 0, 0.4) !important;
         }
 
-        .navbar-brand .navbar-item {
+        .navbar-brand {
             border-radius: 1rem;
             margin-top: 1rem;
             margin-left: 6rem;
