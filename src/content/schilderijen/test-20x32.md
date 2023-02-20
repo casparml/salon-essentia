@@ -1,7 +1,7 @@
 ---
 date: 2023-01-26T14:32:49.948Z
 index: 0
-name: "1"
+name: Schilderij 1
 image: /uploads/schilderijen/_fla3590.jpg
 imageAlt: Schilderij
 soort: Schilderij
