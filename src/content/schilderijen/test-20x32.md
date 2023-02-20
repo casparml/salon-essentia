@@ -13,4 +13,3 @@ height: 80
 price: 200
 framed: false
 ---
-Lorem ipsum dolard nedit angara opiniony
