@@ -53,7 +53,6 @@ const productenCollection = defineCollection({
         date: z.date(),
         index: z.number(),
         name: z.string(),
-        date: z.date(),
         brand: z.string(),
         content: z.number(),
         contentUnit: z.string(),
@@ -66,15 +65,13 @@ const productenCollection = defineCollection({
 // Schilderijen
 const schilderijenCollection = defineCollection({
     schema: z.object({
-        index: z.number(),
+        index: z.number().optional(),
         date: z.date(),
         name: z.string(),
         width: z.number(),
         height: z.number(),
-        framed: z.boolean(),
-        method: z.array(z.string()),
-        material: z.string(),
-        price: z.number(),
+        method: z.array(z.string()).optional(),
+        material: z.string().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
     })
