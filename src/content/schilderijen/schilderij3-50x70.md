@@ -9,5 +9,5 @@ method: Acrylverf
 material: Katoen
 width: 50
 height: 70
-price: 150
+price: 175
 ---
