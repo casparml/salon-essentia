@@ -26,12 +26,7 @@ const allSchilderijen = await getCollection('schilderijen');
 					</figure>
 					<div class="card-content is-overlay is-clipped">
 						<span class={"tag is-medium " + frontmatter.color}>
-							{painting.data.method.map(method => (
-							<span>
-								{method}
-							</span>
-							))}
-							&nbsp;op {painting.data.material}
+							{painting.data.method}&nbsp;op {painting.data.material}
 						</span>
 					</div>
 				</header>
