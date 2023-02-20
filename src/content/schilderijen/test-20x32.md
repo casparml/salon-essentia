@@ -5,8 +5,7 @@ name: Schilderij 1
 image: /uploads/schilderijen/_fla3590.jpg
 imageAlt: Schilderij
 soort: Schilderij
-method:
-  - Acrylverf
+method: Acrylverf
 material: Katoen
 width: 60
 height: 80

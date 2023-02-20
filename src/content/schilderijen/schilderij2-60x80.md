@@ -5,9 +5,8 @@ name: Schilderij 2
 image: /uploads/schilderijen/_fla3597.jpg
 imageAlt: Schilderij
 soort: Schilderij
-method:
-  - Acrylverf
-material: Katoen
+methode: Acrylverf
+materiaal: Katoen
 width: 60
 height: 80
 price: 200

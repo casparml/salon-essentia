@@ -122,7 +122,7 @@ collections:
       - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/schilderijen', public_folder: '/uploads/schilderijen', default: /images/essentia-sun.png }
       - {label: "Foto Beschrijving (SEO)", name: "imageAlt", required: false, default: 'Schilderij'}
       - {label: "Soort", name: "soort", widget: "select", multiple: false, options: ['Schilderij', 'Tekening'], default: 'Schilderij'}
-      - {label: "Materiaal", name: "method", widget: "select", multiple: true, options: ['Acrylverf', 'Pastelkrijt'], default: 'Acrylverf'}
+      - {label: "Materiaal", name: "method", widget: "select", multiple: false, options: ['Acrylverf', 'Pastelkrijt'], default: 'Acrylverf'}
       - {label: "Doek", name: "material", widget: "select", options: ['Katoen', 'Papier', 'Pastelpapier'], default: 'Katoen'}
       - {label: "Breedte (in CM's)", name: "width", widget: "number", default: 0}
       - {label: "Hoogte (in CM'S)", name: "height", widget: "number", default: 0}
