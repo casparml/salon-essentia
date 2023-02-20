@@ -638,6 +638,27 @@ declare module 'astro:content' {
 },
 },
 "schilderijen": {
+"schilderij2-60x80.md": {
+  id: "schilderij2-60x80.md",
+  slug: "schilderij2-60x80",
+  body: string,
+  collection: "schilderijen",
+  data: InferEntrySchema<"schilderijen">
+},
+"schilderij3-50x70.md": {
+  id: "schilderij3-50x70.md",
+  slug: "schilderij3-50x70",
+  body: string,
+  collection: "schilderijen",
+  data: InferEntrySchema<"schilderijen">
+},
+"schilderij4-50x70.md": {
+  id: "schilderij4-50x70.md",
+  slug: "schilderij4-50x70",
+  body: string,
+  collection: "schilderijen",
+  data: InferEntrySchema<"schilderijen">
+},
 "test-20x32.md": {
   id: "test-20x32.md",
   slug: "test-20x32",
