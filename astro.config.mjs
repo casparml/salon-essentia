@@ -72,7 +72,7 @@ export default defineConfig({
   //     theme_color: '#ffffff',
   //     icons: [
   //       {
-  //         src: 'pwa-192x192.png',
+  //         src: '/images/manifest/manifest-icon-192.maskable.png',
   //         sizes: '192x192',
   //         type: 'image/png',
   //       },
@@ -89,7 +89,7 @@ export default defineConfig({
   , webmanifest(
   {
     "name": "Salon Essentia.nl",
-    "icon": "/images/essentia-sun.png",
+    "icon": "/images/Icon.png",
     "short_name": "Essentia",
     "description": "Uw plek voor complete verzorging tot in de kern",
     "start_url": "/",

@@ -7,6 +7,6 @@ type: Zonnemelk
 amount: 1
 content: 100
 contentUnit: ml
-image: /images/essentia-sun.png
+image: /images/Icon.png
 price: 27.95
 ---

@@ -7,7 +7,7 @@ type: Reiniging
 amount: 1
 content: 30
 contentUnit: ml
-image: /images/essentia-sun.png
+image: /images/Icon.png
 price: 9.95
 ---
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam officiis ad illum eligendi provident itaque fuga nihil praesentium dignissimos quos!

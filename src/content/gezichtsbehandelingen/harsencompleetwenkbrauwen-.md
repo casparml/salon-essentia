@@ -4,5 +4,5 @@ index: 7
 type: Epileren/harsen
 title: Harsen Compleet + wenkbrauwen
 price: 50
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

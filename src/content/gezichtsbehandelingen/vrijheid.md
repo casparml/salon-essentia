@@ -5,5 +5,5 @@ type: Gezichtsbehandelingen
 title: Vrijheid
 duration: 60
 price: 60
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

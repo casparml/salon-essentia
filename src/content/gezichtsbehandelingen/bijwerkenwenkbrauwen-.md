@@ -4,5 +4,5 @@ index: 0
 type: Epileren/harsen
 title: Bijwerken wenkbrauwen
 price: 12
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

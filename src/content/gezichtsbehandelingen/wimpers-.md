@@ -4,5 +4,5 @@ index: 0
 type: Verven
 title: Wimpers
 price: 12
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

@@ -19,7 +19,7 @@ collections:
       - {label: "Pagina SubTitle", name: "subtitle", widget: "string"}
       - {label: "Bold Colors", name: "bold", widget: "boolean", default: false}
       - {label: "Pagina Kleur", name: "color", widget: "select", options: [ "is-primary", "is-success", "is-info", "is-link", "is-danger", "is-warning", "is-light", "is-dark"], default: "primary"}
-      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/pages', public_folder: '/uploads/pages', default: /images/essentia-sun.png }
+      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/pages', public_folder: '/uploads/pages', default: /images/Icon.png }
       - {label: "Foto Bescrijfing (SEO)", name: "imageAlt", required: false }
       - {label: "Pagina Text", name: "body", widget: "markdown"}
       - {label: "Korte Pagina Samenvatting (SEO)", name: "description", required: false }
@@ -64,7 +64,7 @@ collections:
       - {label: "Product Inhoudsmaat", name: "contentUnit", widget: "select", options: ['l', 'cl', 'ml', 'kg', 'g', 'mg']}
       - {label: "Product Prijs", name: "price", widget: "number", default: "0.00", value_type: "float"}
       - {label: "Product Beschrijving", name: "body", widget: "markdown", required: false}
-      - {label: "Product Foto", name: "image", widget: "image", media_folder: '/public/uploads/products', public_folder: '/uploads/products', required: false, default: /images/essentia-sun.png }
+      - {label: "Product Foto", name: "image", widget: "image", media_folder: '/public/uploads/products', public_folder: '/uploads/products', required: false, default: /images/Icon.png }
       - {label: "Product Foto Beschrijving (SEO)", name: "imageAlt", required: false }
 
   - name: "massages"
@@ -80,7 +80,7 @@ collections:
       - {label: "Publicatie Volgorde", name: "index", widget: "number", default: 0}
       - {label: "Massage Naam", name: "title", widget: "string"}
       - {label: "Beschrijving", name: "body", widget: "markdown"}
-      - {label: "Massage Foto", name: "image", widget: "image", media_folder: '/public/uploads/massages', public_folder: '/uploads/massages', required: false, default: /images/essentia-sun.png }
+      - {label: "Massage Foto", name: "image", widget: "image", media_folder: '/public/uploads/massages', public_folder: '/uploads/massages', required: false, default: /images/Icon.png }
       - {name: "imageAlt", label: "Foto Bescrijfing (SEO)", required: false }
 
   - name: "gezichtsbehandelingen"
@@ -101,7 +101,7 @@ collections:
       - {label: "Duur in minuten", name: "duration", widget: "number", required: false}
       - {label: "Prijs", name: "price", widget: "number", default: "0.00", value_type: "float"}
       - {label: "Beschrijving", name: "body", widget: "markdown", required: false}
-      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/gezichtsbehandelingen', public_folder: '/uploads/gezichtsbehandelingen', required: false, default: /images/essentia-sun.png}
+      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/gezichtsbehandelingen', public_folder: '/uploads/gezichtsbehandelingen', required: false, default: /images/Icon.png}
       - {label: "Foto Bescrijfing (SEO)", name: "imageAlt", required: false }
 
   - name: "schilderijen"
@@ -119,7 +119,7 @@ collections:
       - {label: "Publicatie Datum", name: "date", widget: "datetime"}
       - {label: "Publicatie Volgorde", name: "index", widget: "number", default: 0}
       - {label: "Schilderij Naam", name: name, widget: "string"}
-      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/schilderijen', public_folder: '/uploads/schilderijen', default: /images/essentia-sun.png }
+      - {label: "Foto", name: "image", widget: "image", media_folder: '/public/uploads/schilderijen', public_folder: '/uploads/schilderijen', default: /images/Icon.png }
       - {label: "Foto Beschrijving (SEO)", name: "imageAlt", required: false, default: 'Schilderij'}
       - {label: "Soort", name: "soort", widget: "select", multiple: false, options: ['Schilderij', 'Tekening'], default: 'Schilderij'}
       - {label: "Materiaal", name: "method", widget: "select", multiple: false, options: ['Acrylverf', 'Pastelkrijt'], default: 'Acrylverf'}
@@ -145,4 +145,4 @@ show_preview_links: false
 locale: 'nl'
 site_url: https://salonessentia.nl
 display_url: https://salonessentia.nl
-logo_url: https://salonessentia.nl/images/essentia-sun.png
+logo_url: https://salonessentia.nl/images/Icon.png

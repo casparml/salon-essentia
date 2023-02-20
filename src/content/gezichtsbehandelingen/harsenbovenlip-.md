@@ -4,5 +4,5 @@ index: 4
 type: Epileren/harsen
 title: Harsen bovenlip
 price: 12
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

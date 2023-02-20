@@ -5,5 +5,5 @@ type: Gezichtsbehandelingen
 title: Verrukkung
 duration: 90
 price: 85
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

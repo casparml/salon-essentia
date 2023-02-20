@@ -4,5 +4,5 @@ index: 1
 type: Verven
 title: Wenkbrauwen
 price: 12
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

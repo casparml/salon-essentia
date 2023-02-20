@@ -4,5 +4,5 @@ index: 5
 type: Epileren/harsen
 title: Harsen kin
 price: 15
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

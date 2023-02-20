@@ -4,5 +4,5 @@ index: 6
 type: Epileren/harsen
 title: "Harsen Compleet: bovenlip, kin, kaak, wangen"
 price: 40
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

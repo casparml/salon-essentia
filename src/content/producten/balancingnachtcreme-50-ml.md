@@ -8,5 +8,5 @@ amount: 1
 content: 50
 contentUnit: ml
 price: 35
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

@@ -5,5 +5,5 @@ type: Gezichtsbehandelingen
 title: Overvloed
 duration: 120
 price: 110
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

@@ -4,5 +4,5 @@ index: 3
 type: Epileren/harsen
 title: Modelleren wenkbrauwen
 price: 15
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---

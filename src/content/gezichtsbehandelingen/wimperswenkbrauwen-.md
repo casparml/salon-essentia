@@ -4,5 +4,5 @@ index: 2
 type: Verven
 title: Wimpers & Wenkbrauwen
 price: 22
-image: /images/essentia-sun.png
+image: /images/Icon.png
 ---
