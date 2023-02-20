@@ -7,6 +7,6 @@ type: Reinigings Paketten
 amount: 3
 content: 150
 contentUnit: ml
+price: 76
 image: /images/essentia-sun.png
-price: 71
 ---
