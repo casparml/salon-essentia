@@ -7,6 +7,6 @@ type: Multi Use Butter
 amount: 1
 content: 250
 contentUnit: ml
+price: 65
 image: /images/essentia-sun.png
-price: 49.95
 ---
