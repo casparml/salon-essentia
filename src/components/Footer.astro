@@ -99,17 +99,14 @@
                 <div class="columns">
                     <div class="column">
                         <p>
-                            <span>Gebouwd om: {buildDate} Copyright © 2021-2023 | All rights reserved to Salon Essentia</span>
+                            <span>Copyright © <span id="copyright-year"></span> | All rights reserved to Salon Essentia</span>
                         </p>
                     </div>
                     <div class="column">
                         <p class="logo level-right">
-                            <a class="brand has-text-shadow has-text-grey" href="/"
-                            title="visit ArtKids Foundation Website?">
+                            <a class="brand has-text-shadow has-text-grey" href="https://www.casparlandman.com/" target="_blank" aria-label="Caspar Landman: websites met een visie." aria-describedby="casparlandman" data-tooltip-pos="bottom" data-tooltip-multiline="true" data-tooltip-animated="true" title="Leer meer over Caspar Landman">
                             Powered by
-                            <Image loading="lazy" decoding="async" src="/images/artkids_logo.png" alt="Stichting ArtKids Foundation: Funding Happiness" width="24" height="24" />
-                            <span class="artkids has-text-weight-bold is-italic has-text-danger">ArtKids</span><span
-                            class="foundation has-text-weight-bold is-italic" style="color: yellow;">Foundation.org</span></a>
+                            <span class="artkids has-text-weight-bold is-italic" style="color: #F19118;">Caspar</span><span class="foundation has-text-weight-bold is-italic" style="color: #F2D7B9;;">Landman.com</span></a>
                         </p>
                     </div>
                 </div>
@@ -136,3 +133,12 @@
     }
 }
 </style>
+
+<script>
+    // Set the copyright year to "2021" or "2021 - (current year)"
+    const baseYear = 2021;
+    const currentYear = new Date().getFullYear();
+    document.getElementById("copyright-year").innerText =
+        (currentYear === baseYear) ? `${baseYear}` : `${baseYear} - ${currentYear}`;
+
+</script>
