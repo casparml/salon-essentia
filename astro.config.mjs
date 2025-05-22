@@ -1,12 +1,62 @@
 import { defineConfig } from 'astro/config';
-import image from '@astrojs/image';
-import prefetch from '@astrojs/prefetch';
-import sitemap from '@astrojs/sitemap';
-import webmanifest from 'astro-webmanifest';
-import netlify from '@astrojs/netlify';
-import { partytown } from '@astrojs/partytown';
 
+import { partytown } from 'astro/config';
+
+// https://astro.build/config
+import image from "@astrojs/image";
+
+// https://astro.build/config
+import prefetch from "@astrojs/prefetch";
+
+// https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
+import netlify from "@astrojs/netlify/functions";
+
+// https://astro.build/config
+import { VitePWA } from 'vite-plugin-pwa';
+
+// https://astro.build/config
+import webmanifest from "astro-webmanifest";
+
+// https://astro.build/config
 export default defineConfig({
+  vite: {
+    logLevel: 'info',
+    define: {
+      __DATE__: `'${new Date().toISOString()}'`
+    },
+    plugins: [VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        globDirectory: 'dist',
+        globPatterns: [
+          '**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}',
+        ],
+        // Don't fallback on document based (e.g. `/some-page`) requests
+        // This removes an errant console.log message from showing up.
+        navigateFallback: null,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.cdnfonts\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'cdn-fonts-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+        ]
+      },
+    })]
+  },
+  site: 'https://salonessentia.nl',
   integrations: [
     image({
       serviceEntryPoint: '@astrojs/image/sharp'
