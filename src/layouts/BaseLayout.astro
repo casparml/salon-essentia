@@ -23,7 +23,6 @@ function herostyles(){
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const GA_MEASUREMENT_ID = 'G-GVSRRSYRGN'; // Replace with your Measurement ID
 ---
 
 <!DOCTYPE html>
@@ -42,9 +41,6 @@ const GA_MEASUREMENT_ID = 'G-GVSRRSYRGN'; // Replace with your Measurement ID
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Gloria+Hallelujah&display=swap" rel="stylesheet"> -->
-
-		<!-- Google tag (gtag.js) -->
-
 
 		<AstroSeo
 		title={'Salon Essentia - ' + title}
@@ -118,12 +114,16 @@ const GA_MEASUREMENT_ID = 'G-GVSRRSYRGN'; // Replace with your Measurement ID
 		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
 		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
 
-		<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-		<script is:inline>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', '${GA_MEASUREMENT_ID}');
+		<!-- Google tag (gtag.js) -->
+		<script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-GVSRRSYRGN"></script>
+
+		<script is:inline type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+			dataLayer.push(arguments);}
+			gtag("js", new Date());
+
+			gtag("config", "G-GVSRRSYRGN");
 		</script>
 	</head>
 	<body>

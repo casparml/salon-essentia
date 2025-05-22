@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0edc87fd-f9a7-4881-a2ac-a24f23ce2e17" name="Changes" comment="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings.">
+    <list default="true" id="0edc87fd-f9a7-4881-a2ac-a24f23ce2e17" name="Changes" comment="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/BaseLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BaseLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +91,7 @@
       <workItem from="1746889480722" duration="4024000" />
       <workItem from="1747480760985" duration="2620000" />
       <workItem from="1747900104871" duration="755000" />
-      <workItem from="1747905693009" duration="2335000" />
+      <workItem from="1747905693009" duration="4353000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <option name="closed" value="true" />
@@ -168,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747907654011</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings.">
+      <option name="closed" value="true" />
+      <created>1747908124853</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747908124853</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings.">
+      <option name="closed" value="true" />
+      <created>1747908401796</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747908401796</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +212,8 @@
     </ignored-roots>
     <MESSAGE value="a" />
     <MESSAGE value="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings." />
+    <MESSAGE value="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
