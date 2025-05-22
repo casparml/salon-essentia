@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0edc87fd-f9a7-4881-a2ac-a24f23ce2e17" name="Changes" comment="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings.">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/casparml/Documents/_phpstorm/salon-essentia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -57,8 +59,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.466" />
-        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.466" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PS-251.25410.148" />
+        <option value="bundled-php-predefined-a98d8de5180a-c5828cf854d9-com.jetbrains.php.sharedIndexes-PS-251.25410.148" />
       </set>
     </attachedChunks>
   </component>
@@ -72,6 +74,7 @@
       <workItem from="1746884417838" duration="2602000" />
       <workItem from="1746889480722" duration="4024000" />
       <workItem from="1747480760985" duration="2620000" />
+      <workItem from="1747900104871" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <option name="closed" value="true" />
@@ -105,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747483241652</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings.">
+      <option name="closed" value="true" />
+      <created>1747900580428</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747900580428</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
