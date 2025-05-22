@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config';
 
-import { partytown } from 'astro/config';
-
 // https://astro.build/config
 import image from "@astrojs/image";
 
@@ -63,7 +61,6 @@ export default defineConfig({
     }),
     prefetch(),
     sitemap(),
-    partytown({ config: { forward: ['dataLayer.push'] } }),
     webmanifest({
       "name": "Salon Essentia.nl",
       "icon": "/images/Icon.png",

@@ -25,11 +25,17 @@
     "astro-page-transition": "^0.5.6",
     "astro-purgecss": "^5.2.2",
     "astro-webmanifest": "^1.0.0",
+    "bare-fs": "^4.1.5",
+    "bare-os": "^3.6.1",
     "bulma": "^0.9.4",
     "partytown": "^0.0.0",
+    "purgecss": "^7.0.2",
     "sass": "^1.57.1",
     "sharp": "^0.34.2",
+    "typescript": "^5.8.3",
+    "vite": "^4.5.14",
     "vite-plugin-pwa": "^1.0.0",
-    "workbox-window": "^6.5.4"
+    "workbox-build": "^7.3.0",
+    "workbox-window": "^7.3.0"
   }
 }
