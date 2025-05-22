@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0edc87fd-f9a7-4881-a2ac-a24f23ce2e17" name="Changes" comment="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BaseLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BaseLayout.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="0edc87fd-f9a7-4881-a2ac-a24f23ce2e17" name="Changes" comment="[/]" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +61,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "/Users/casparml/Documents/_phpstorm/salon-essentia/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -91,7 +84,7 @@
       <workItem from="1746889480722" duration="4024000" />
       <workItem from="1747480760985" duration="2620000" />
       <workItem from="1747900104871" duration="755000" />
-      <workItem from="1747905693009" duration="4353000" />
+      <workItem from="1747905693009" duration="4965000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <option name="closed" value="true" />
@@ -189,7 +182,39 @@
       <option name="project" value="LOCAL" />
       <updated>1747908401796</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates.">
+      <option name="closed" value="true" />
+      <created>1747910098585</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747910098585</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates.">
+      <option name="closed" value="true" />
+      <created>1747910196099</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1747910196099</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates.">
+      <option name="closed" value="true" />
+      <created>1747910273217</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747910273217</updated>
+    </task>
+    <task id="LOCAL-00016" summary="[/]">
+      <option name="closed" value="true" />
+      <created>1747910659652</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1747910659652</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +238,8 @@
     <MESSAGE value="a" />
     <MESSAGE value="Update Footer component and workspace settings  &#10;&#10;Revised the Footer component to dynamically display the copyright year and updated branding to reference Caspar Landman. Adjusted the workspace configuration to reflect new tasks and modified IDE-specific settings." />
     <MESSAGE value="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Partytown integration and update Astro dependencies&#10;&#10;Introduced Partytown for improved third-party scripts handling with custom configuration. Removed outdated Astro PWA settings and upgraded multiple Astro-related packages to their latest versions for enhanced stability and new features. Adjusted dependencies in `yarn.lock` to align with the latest updates." />
+    <MESSAGE value="[/]" />
+    <option name="LAST_COMMIT_MESSAGE" value="[/]" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
