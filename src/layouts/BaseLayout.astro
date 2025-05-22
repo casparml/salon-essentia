@@ -44,7 +44,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GVSRRSYRGN"></script>
-		<script src="/ga-init.js"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-GVSRRSYRGN');
+		</script>
 
 		<AstroSeo
 		title={'Salon Essentia - ' + title}
