@@ -118,12 +118,15 @@ const GA_MEASUREMENT_ID = 'G-GVSRRSYRGN'; // Replace with your Measurement ID
 		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
 		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
 
-		<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+		<script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-GVSRRSYRGN"></script>
 		<script is:inline>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() {
+		dataLayer.push(arguments);
+	}
 		gtag('js', new Date());
-		gtag('config', '${GA_MEASUREMENT_ID}');
+
+		gtag('config', 'G-GVSRRSYRGN');
 		</script>
 	</head>
 	<body>
