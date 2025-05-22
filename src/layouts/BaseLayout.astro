@@ -23,6 +23,7 @@ function herostyles(){
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+const GA_MEASUREMENT_ID = 'G-GVSRRSYRGN'; // Replace with your Measurement ID
 ---
 
 <!DOCTYPE html>
@@ -43,12 +44,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Gloria+Hallelujah&display=swap" rel="stylesheet"> -->
 
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GVSRRSYRGN"></script>
+		<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
 		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-GVSRRSYRGN');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', '{GA_MEASUREMENT_ID}');
 		</script>
 
 		<AstroSeo
