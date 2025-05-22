@@ -4,9 +4,8 @@ import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 import webmanifest from 'astro-webmanifest';
 import netlify from '@astrojs/netlify';
-import partytown from '@astrojs/partytown';
+import { partytown } from '@astrojs/partytown';
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [
     image({
