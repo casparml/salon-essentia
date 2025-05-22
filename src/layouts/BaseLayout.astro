@@ -27,146 +27,143 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <!DOCTYPE html>
 <html lang="nl">
-<head>
+	<head>
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="generator" content={Astro.generator} />
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="icon" type="image/png" href="/favicon.png" />
-	<link rel="manifest" href="/images/manifest.json">
-	<script src="/src/pwa.ts"></script>
-	<link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
-	<link rel="preconnect" crossorigin="anonymous" href="https://fonts.cdnfonts.com">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Gloria+Hallelujah&display=swap" rel="stylesheet"> -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="manifest" href="/images/manifest.json" />
+		<script src="/src/pwa.ts"></script>
+		<link rel="dns-prefetch" href="https://fonts.cdnfonts.com" />
+		<link rel="preconnect" crossorigin="anonymous" href="https://fonts.cdnfonts.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Gloria+Hallelujah&display=swap" rel="stylesheet"> -->
 
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GVSRRSYRGN"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-	gtag('config', 'G-GVSRRSYRGN');
-	</script>
+			gtag('config', 'G-GVSRRSYRGN');
+		</script>
 
-	<AstroSeo
-	title={'Salon Essentia - ' + title}
-	description={description}
-	canonical={canonicalURL.toString()}
-	openGraph={{
-		title: 'Salon Essentia - ' + title,
-		description: description,
-		url: Astro.request.url.toString(),
-		site_name: "Salon Essentia",
-		type: "website",
-		locale: "nl_NL",
-		images: [
-			{
-				url: 'https://salonessentia.nl' + image
-			}
-		]
-	}}
+		<AstroSeo
+		title={'Salon Essentia - ' + title}
+		description={description}
+		canonical={canonicalURL.toString()}
+		openGraph={{
+			title: 'Salon Essentia - ' + title,
+			description: description,
+			url: Astro.request.url.toString(),
+			site_name: "Salon Essentia",
+			type: "website",
+			locale: "nl_NL",
+			images: [
+				{
+					url: 'https://salonessentia.nl' + image
+				}
+			]
+		}}
 
 
-	/>
+		/>
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:title" content={title}>
-	<meta property="twitter:description" content={description}>
-	<meta property="twitter:image" content={"https://salonessentia.nl" + image}>
-	<meta property="og:image" content={"https://salonessentia.nl" + image}>
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:title" content={title}>
+		<meta property="twitter:description" content={description}>
+		<meta property="twitter:image" content={"https://salonessentia.nl" + image}>
+		<meta property="og:image" content={"https://salonessentia.nl" + image}>
 
-	<!-- Google Preview Image
-	<PageMap>
-		<DataObject type="thumbnail">
-		<Attribute name="src" value=https:"//salonessentia.nl/images/manifest/manifest-icon-192.maskable.png" />
-		<Attribute name="width" value="192"/>
-		<Attribute name="height" value="192"/>
-		</DataObject>
-		<meta name="thumbnail" content="https://salonessentia.nl/images/manifest/manifest-icon-192.maskable.png" />
-	</PageMap>
- 	-->
+		<!-- Google Preview Image
+		<PageMap>
+			<DataObject type="thumbnail">
+			<Attribute name="src" value=https:"//salonessentia.nl/images/manifest/manifest-icon-192.maskable.png" />
+			<Attribute name="width" value="192"/>
+			<Attribute name="height" value="192"/>
+			</DataObject>
+			<meta name="thumbnail" content="https://salonessentia.nl/images/manifest/manifest-icon-192.maskable.png" />
+		</PageMap>
+		-->
 
-	<link rel="apple-touch-icon" href="/images/manifest/apple-icon-180.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GVSRRSYRGN"></script>
-</head>
-<body>
-	<link itemprop="thumbnailUrl" href={"https://salonessentia.nl" + image}>
-	<span class="hidden" itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
-		<link itemprop="url" href={"https://salonessentia.nl" + image}>
-	</span>
-	<PageTransition speed={500} color="hsl(44deg, 100%, 77%)" zIndex={99} />
-	<header class={"hero is-fullheight-with-navbar has-background " + herostyles() + ' ' + size + ' ' + color} >
-		<!-- Hero Image: will provide an image covering the whole Hero -->
-		<Image loading="lazy" decoding="async" aspectRatio={16/9} width="1920" class="hero-image" src={image} alt={subtitle} title={title} />
-		<!-- Hero head: will stick at the top -->
-		<div class="hero-head">
-			<Nav />
-		</div>
-		<!-- Hero content: will be in the middle -->
-		<div class="hero-body">
-			<div class="container">
-				<div class={"box notification is-transparent " + getLightBackgroundColor(color)} style="max-width: 440px;">
-					<h2 class={"title is-size-4 " + getTextColor(color)}>{title}</h2>
-					<h3 class={"subtitle is-size-5 " + getTextColor(color)}>{subtitle}</h3>
-					<div class={"content " + getTextColor(color)}>
-						<p>{description}</p>
+		<link rel="apple-touch-icon" href="/images/manifest/apple-icon-180.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+		<link rel="apple-touch-startup-image" href="/images/manifest/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+	</head>
+	<body>
+		<link itemprop="thumbnailUrl" href={"https://salonessentia.nl" + image}>
+		<span class="hidden" itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+			<link itemprop="url" href={"https://salonessentia.nl" + image}>
+		</span>
+		<PageTransition speed={500} color="hsl(44deg, 100%, 77%)" zIndex={99} />
+		<header class={"hero is-fullheight-with-navbar has-background " + herostyles() + ' ' + size + ' ' + color} >
+			<!-- Hero Image: will provide an image covering the whole Hero -->
+			<Image loading="lazy" decoding="async" aspectRatio={16/9} width="1920" class="hero-image" src={image} alt={subtitle} title={title} />
+			<!-- Hero head: will stick at the top -->
+			<div class="hero-head">
+				<Nav />
+			</div>
+			<!-- Hero content: will be in the middle -->
+			<div class="hero-body">
+				<div class="container">
+					<div class={"box notification is-transparent " + getLightBackgroundColor(color)} style="max-width: 440px;">
+						<h2 class={"title is-size-4 " + getTextColor(color)}>{title}</h2>
+						<h3 class={"subtitle is-size-5 " + getTextColor(color)}>{subtitle}</h3>
+						<div class={"content " + getTextColor(color)}>
+							<p>{description}</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
-	<main class={"section " + getLightBackgroundColor(color)}>
-		<div class="container raised">
-			<slot />
-		</div>
-	</main>
-	<Footer />
+		</header>
+		<main class={"section " + getLightBackgroundColor(color)}>
+			<div class="container raised">
+				<slot />
+			</div>
+		</main>
+		<Footer />
 
-	<a class="button is-rounded is-whatsapp is-floating is-icon-text " href="https://api.whatsapp.com/send?phone=31640026648&text=Dag%20Salon%20Essentia%2C%20ik%20heb%20een%20vraag..." target="_blank">
-		<Icon pack="fa" name="whatsapp" />
-		<span class="is-sr-only">Connect over whatsapp</span>
-	</a>
-	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</body>
-</html>
-
+		<a class="button is-rounded is-whatsapp is-floating is-icon-text " href="https://api.whatsapp.com/send?phone=31640026648&text=Dag%20Salon%20Essentia%2C%20ik%20heb%20een%20vraag..." target="_blank">
+			<Icon pack="fa" name="whatsapp" />
+			<span class="is-sr-only">Connect over whatsapp</span>
+		</a>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	</body>
 <style lang="scss">
 	@media screen and (max-width: 768px) {
 		.hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
@@ -217,3 +214,4 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		}
 	}
 </style>
+</html>
