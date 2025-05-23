@@ -1,13 +1,15 @@
 ---
-layout: ../layouts/GezichtsLayout.astro
+date: 2025-05-23T21:47:52.725Z
 index: 2
+size: is-fullheight
 title: Gezichtsbehandeling
 subtitle: Want ieder mens en iedere huid is uniek
-color: is-info
 bold: true
+color: is-info
+layout: ../layouts/GezichtsLayout.astro
 image: /uploads/pages/3603-landscape.jpg
-size: is-fullheight
-description: Samen bespreken we wat je wensen en de mogelijkheden zijn en waar de nadruk op mag liggen.
+description: Samen bespreken we wat je wensen en de mogelijkheden zijn en waar
+  de nadruk op mag liggen.
 ---
 
 Je hebt keuze uit de volgende Essentia behandelingen: *Vrijheid*, *Verrukking* of *Overvloed*.
