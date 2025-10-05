@@ -57,37 +57,27 @@ export default defineConfig({
       },
     })]
   },
-  site: 'https://salonessentia.nl',
-  integrations: [image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), prefetch(), sitemap()
-  // AstroPWA({
-  //   mode: 'development',
-  //   base: '/',
-  //   scope: '/',
-  //   registerType: 'autoUpdate',
-  //   manifest: {
-  //     name: 'Astro PWA',
-  //     short_name: 'Astro PWA',
-  //     theme_color: '#ffffff',
-  //     icons: [
-  //       {
-  //         src: '/images/manifest/manifest-icon-192.maskable.png',
-  //         sizes: '192x192',
-  //         type: 'image/png',
-  //       },
-  //     ],
-  //   },
-  //   workbox: {
-  //     globPatterns: ['**/*.{css,js,jpg,jpeg,woff,woff2,html,svg,png,ico,txt}'],
-  //   },
-  //   devOptions: {
-  //     enabled: true,
-  //     navigateFallback: '/404',
-  //   },
-  // }),
-  , webmanifest(
-  {
+    site: 'https://salonessentia.nl',
+    integrations: [image({
+        serviceEntryPoint: '@astrojs/image/sharp'
+    }), prefetch(), sitemap({
+        filter: (page) => !page.includes('/admin/'), // Exclude admin pages
+        changefreq: 'weekly',
+        priority: 0.5,
+        lastmod: new Date(), // Use actual last modified dates in production
+        serialize(item) {
+            // Custom priorities based on content importance
+            if (item.url === 'https://salonessentia.nl/') {
+                return {
+                    ...item,
+                    changefreq: 'daily',
+                    priority: 1.0,
+                };
+            }
+            return item;
+        },
+    }),
+    webmanifest({
     "name": "Salon Essentia.nl",
     "icon": "/images/Icon.png",
     "short_name": "Essentia",
